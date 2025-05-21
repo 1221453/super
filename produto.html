@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do Produto</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/produto.css">
+</head>
+<body>
+    <header>
+        <h1>Detalhes do Produto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="pesquisa.html">Pesquisar</a></li>
+                <li><a href="cliente.html">Área Cliente</a></li>
+                <li><a href="funcionario.html">Funcionário</a></li>
+                <li><a href="admin.html">Administrador</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="produto-detalhe">
+        <section class="info-produto">
+            <img src="images/produto-exemplo.jpg" alt="Imagem do Produto">
+            <div class="dados-produto">
+                <h2>Arroz Integral</h2>
+                <p>Descrição: Arroz integral biológico de alta qualidade.</p>
+                <p>Preço: <strong>1,99€</strong></p>
+                <p>Stock disponível: 24 unidades</p>
+                <p>Localização: Corredor 3 - Prateleira B</p>
+                <button>Adicionar à Lista</button>
+                <button>Adicionar à Despensa</button>
+            </div>
+        </section>
+
+        <section class="secao-avaliacoes">
+            <h3>Avaliações dos Clientes</h3>
+            <div class="avaliacao">
+                <strong>Maria:</strong> ⭐⭐⭐⭐☆ - "Muito saboroso!"
+            </div>
+            <div class="avaliacao">
+                <strong>João:</strong> ⭐⭐⭐⭐⭐ - "Excelente qualidade e preço."
+            </div>
+
+            <form class="form-avaliacao">
+                <label for="comentario">Deixe a sua avaliação:</label>
+                <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
+                <label for="estrelas">Classificação:</label>
+                <select id="estrelas">
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+                <button type="submit">Submeter Avaliação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hipermercado Inteligente</p>
+    </footer>
+</body>
+</html>

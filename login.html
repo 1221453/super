@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hipermercado Inteligente</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+    </header>
+
+    <main class="login-container">
+        <form class="login-form">
+            <label for="tipo">Tipo de Utilizador:</label>
+            <select id="tipo" name="tipo">
+                <option value="cliente">Cliente</option>
+                <option value="funcionario">Funcionário</option>
+                <option value="admin">Administrador</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+
+            <label for="senha">Palavra-passe:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hipermercado Super</p>
+    </footer>
+</body>
+</html>

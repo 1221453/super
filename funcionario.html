@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Funcionário</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/funcionario.css">
+</head>
+<body>
+    <header>
+        <h1>Funcionário - Gestão de Tarefas e Stock</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cliente.html">Cliente</a></li>
+                <li><a href="funcionario.html">Funcionário</a></li>
+                <li><a href="admin.html">Administrador</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="func-main">
+        <aside class="menu-func">
+            <ul>
+                <li><a href="#">Stock</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Tarefas</a></li>
+                <li><a href="#">Mensagens</a></li>
+            </ul>
+        </aside>
+
+        <section class="painel-func">
+            <h2>Gestão de Produtos</h2>
+            <form class="form-produto">
+                <input type="text" placeholder="Nome do produto">
+                <input type="file" accept="image/*">
+                <input type="number" step="0.01" placeholder="Preço">
+                <textarea placeholder="Descrição"></textarea>
+                <select>
+                    <option value="">Categoria</option>
+                    <option value="frescos">Frescos</option>
+                    <option value="mercearia">Mercearia</option>
+                </select>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+
+            <h2>Tarefas Diárias</h2>
+            <ul class="lista-tarefas">
+                <li><input type="checkbox"> Reposição de prateleiras</li>
+                <li><input type="checkbox"> Verificar validade dos iogurtes</li>
+            </ul>
+
+            <h2>Mensagens da Gerência</h2>
+            <div class="mensagens">
+                <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
+                <textarea placeholder="Responder à gerência..."></textarea>
+                <button>Enviar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hipermercado Inteligente</p>
+    </footer>
+</body>
+</html>

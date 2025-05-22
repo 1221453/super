@@ -8,10 +8,22 @@ body {
 
 .top-bar {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
     justify-content: space-between;
-    
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.left-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .logo {
@@ -61,7 +73,7 @@ body {
     max-width: 200px;
     font-size: 0.9rem;
     align-self: flex-start;
-    margin-left: 10rem;
+    margin-left: auto;
 }
 
 .login-box input {
@@ -86,7 +98,12 @@ body {
 }
 
 .conteudo {
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;    /* centra horizontalmente */
+    gap: 2rem;
+    padding: 2rem 1rem;
 }
 
 .promocoes {
@@ -112,6 +129,8 @@ body {
     padding: 2rem;
     border-radius: 8px;
     font-weight: bold;
+    width: 220px;               
+    margin: 0 auto; 
 }
 
 .footer-links {
@@ -166,10 +185,4 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
-
-.container {
-    max-width: 960px;   /* ou 960px, 1140px conforme desejado */
-    margin: 0 auto;
-    padding: 0 1rem;     /* espaço lateral interno */
 }

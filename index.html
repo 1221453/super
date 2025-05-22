@@ -8,57 +8,61 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <header class="top-bar">
-        <div class="logo">
-            <div class="logo-box">S</div>
-            <span class="logo-text">Super</span>
-        </div>
+    <div class="container"> <!-- começa a limitar largura -->
+        <header class="top-bar">
+            <div class="left-group"> <!-- agrupa elementos da esquerda -->
+                <div class="logo">
+                    <div class="logo-box">S</div>
+                    <span class="logo-text">Super</span>
+                </div>
 
-        <div class="search-bar">
-            <form action="pesquisa.html" method="get">
-        <input type="text" name="q" placeholder="Search">
-        <button type="submit">🔍</button>
-    </form>
-        </div>
+                <div class="search-bar">
+                    <form action="pesquisa.html" method="get">
+                        <input type="text" name="q" placeholder="Search">
+                        <button type="submit">🔍</button>
+                    </form>
+                </div>
 
-        <div class="nav-buttons">
-            <a href="pesquisa.html" class="btn">PRODUTOS</a>
-            <a href="#" class="btn">CONTACTOS</a>
-        </div>
+                <div class="nav-buttons">
+                    <a href="pesquisa.html" class="btn">PRODUTOS</a>
+                    <a href="#" class="btn">CONTACTOS</a>
+                </div>
+            </div>
 
-        <div class="login-box">
-            <h3>Sign In</h3>
-            <label>User Name:</label>
-            <input type="text" value="johndoe">
-            <label>Password:</label>
-            <input type="password" value="********">
-            <button class="sign-in">SIGN IN</button>
-            <a href="#">Forgot Password?</a>
-            <h4>New User</h4>
-            <button class="sign-up">SIGN UP</button>
-        </div>
-    </header>
+            <div class="login-box">
+                <h3>Sign In</h3>
+                <label>User Name:</label>
+                <input type="text" value="johndoe">
+                <label>Password:</label>
+                <input type="password" value="********">
+                <button class="sign-in">SIGN IN</button>
+                <a href="#">Forgot Password?</a>
+                <h4>New User</h4>
+                <button class="sign-up">SIGN UP</button>
+            </div>
+        </header>
 
-    <main class="conteudo">
-        <section class="promocoes">
-            <div class="promo-box">PROMOÇÕES</div>
-            <div class="promo-box">PROMOÇÕES</div>
-        </section>
+        <main class="conteudo">
+            <section class="promocoes">
+                <div class="promo-box">PROMOÇÕES</div>
+                <div class="promo-box">PROMOÇÕES</div>
+            </section>
 
-        <section class="destaques">
-            <h2>DESTAQUES</h2>
-        </section>
-    </main>
+            <section class="destaques">
+                <h2>DESTAQUES</h2>
+            </section>
+        </main>
 
-    <footer class="footer-links">
-        <a href="#">Contactos</a>
-        <a href="#">Links úteis</a>
-        <a href="#">Termo de Serviço</a>
-        <div class="social-icons">
-            <span>🔗</span>
-            <span>🐦</span>
-            <span>📘</span>
-        </div>
-    </footer>
+        <footer class="footer-links">
+            <a href="#">Contactos</a>
+            <a href="#">Links úteis</a>
+            <a href="#">Termo de Serviço</a>
+            <div class="social-icons">
+                <span>🔗</span>
+                <span>🐦</span>
+                <span>📘</span>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

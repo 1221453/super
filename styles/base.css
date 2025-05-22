@@ -167,7 +167,7 @@ footer {
 }
 
 .container {
-    max-width: 1200px;   /* ou 960px, 1140px conforme desejado */
+    max: width 960px;   /* ou 960px, 1140px conforme desejado */
     margin: 0 auto;
     padding: 0 1rem;     /* espaço lateral interno */
 }

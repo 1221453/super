@@ -122,7 +122,7 @@ body {
 .footer-links a {
     margin-right: 1rem;
     text-decoration: none;
-    color: #007bff;
+    color: hsl(212, 72%, 93%);
 }
 
 .social-icons span {

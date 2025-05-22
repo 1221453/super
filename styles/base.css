@@ -20,7 +20,7 @@ body {
 }
 
 .logo-box {
-    background-color: #007bff;
+    background-color: #008CFF;
     color: white;
     padding: 0.5rem 1rem;
     font-weight: bold;
@@ -81,6 +81,53 @@ body {
 
 .login-box .sign-up {
     background-color: #4d9aff;
+}
+
+.conteudo {
+    padding: 1rem;
+}
+
+.promocoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.promo-box {
+    background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
+    padding: 3rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.destaques {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.footer-links {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+
+.footer-links a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.social-icons span {
+    margin-left: 1rem;
+    font-size: 1.2rem;
 }
 
 main {

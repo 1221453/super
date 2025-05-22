@@ -8,9 +8,10 @@ body {
 
 .top-bar {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
-    padding: 1rem;
-    gap: 1rem;
+    justify-content: space-between;
+    
 }
 
 .logo {
@@ -57,9 +58,10 @@ body {
 .login-box {
     border: 1px solid #ccc;
     padding: 1rem;
-    margin-left: auto;
     max-width: 200px;
     font-size: 0.9rem;
+    align-self: flex-start;
+    margin-left: 10rem;
 }
 
 .login-box input {
@@ -167,7 +169,7 @@ footer {
 }
 
 .container {
-    max: width auto;   /* ou 960px, 1140px conforme desejado */
+    max-width: 960px;   /* ou 960px, 1140px conforme desejado */
     margin: 0 auto;
     padding: 0 1rem;     /* espaço lateral interno */
 }

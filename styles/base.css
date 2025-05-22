@@ -38,13 +38,20 @@ body {
     padding: 0.4rem;
 }
 
-.nav-buttons button {
+.nav-buttons .btn {
+    display: inline-block;
     margin: 0.25rem;
     padding: 0.4rem 1rem;
     background-color: #e0eefe;
     border: 1px solid #b0d4f1;
     border-radius: 4px;
-    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-buttons .btn:hover {
+    background-color: #c5defa;
 }
 
 .login-box {

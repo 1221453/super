@@ -1,69 +1,172 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Funcionário</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/funcionario.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Área do Funcionário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+    }
+
+    header, footer {
+      background: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      border-bottom: 4px solid #0056b3;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    main {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      gap: 2rem;
+    }
+
+    .menu-func ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-func li {
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .painel-func {
+      flex: 1;
+    }
+
+    .bloco {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .linha {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .campo-menor {
+      flex: 0.3;
+    }
+
+    input[type="text"], input[type="number"], textarea, select {
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 4px solid #0056b3;
+    }
+  </style>
 </head>
 <body>
- <header style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-bottom: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-      <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">Funcionário</h1>
-      <nav>
-        <ul style="list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0;">
-          <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Início</a></li>
-          <li><a href="pesquisa.html" style="color: white; text-decoration: none; font-weight: 500;">Funcionário</a></li>
-          <li><a href="login.html" style="color: white; text-decoration: none; font-weight: 500;">Logout</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <h1>Funcionário</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Funcionário</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <main>
+    <aside class="menu-func">
+      <ul>
+        <li>Stock</li>
+        <li>Produtos</li>
+        <li>Tarefas</li>
+        <li>Mensagens</li>
+      </ul>
+    </aside>
 
-    <main class="func-main">
-        <aside class="menu-func">
-            <ul>
-                <li><a href="#">Stock</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Tarefas</a></li>
-                <li><a href="#">Mensagens</a></li>
-            </ul>
-        </aside>
+    <section class="painel-func">
+      <div class="bloco">
+        <h2>Gestão de Produtos</h2>
+        <div class="linha">
+          <div class="campo">
+            <label for="nome-produto">Nome do produto</label>
+            <input type="text" id="nome-produto" placeholder="Nome do produto">
+          </div>
+          <div class="campo campo-menor">
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" placeholder="Preço">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="marca">Marca</label>
+          <input type="text" id="marca" placeholder="Marca">
+        </div>
+        <div class="campo">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" placeholder="Descrição">
+        </div>
+        <button>Adicionar Produto</button>
+      </div>
 
-        <section class="painel-func">
-            <h2>Gestão de Produtos</h2>
-            <form class="form-produto">
-                <input type="text" placeholder="Nome do produto">
-                <input type="text" placeholder="Marca">
-                <input type="file" accept="image/*">
-                <input type="number" step="0.01" placeholder="Preço">
-                <textarea placeholder="Descrição"></textarea>
-                <select>
-                    <option value="">Categoria</option>
-                    <option value="frescos">Frescos</option>
-                    <option value="mercearia">Mercearia</option>
-                </select>
-                <button type="submit">Adicionar Produto</button>
-            </form>
+      <div class="bloco">
+        <h2>Tarefas Diárias</h2>
+        <ul>
+          <li><input type="checkbox"> Reposição de prateleiras</li>
+          <li><input type="checkbox"> Verificar validade dos iogurtes</li>
+        </ul>
+      </div>
 
-            <h2>Tarefas Diárias</h2>
-            <ul class="lista-tarefas">
-                <li><input type="checkbox"> Reposição de prateleiras</li>
-                <li><input type="checkbox"> Verificar validade dos iogurtes</li>
-            </ul>
+      <div class="bloco">
+        <h2>Mensagens da Gerência</h2>
+        <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
+        <textarea placeholder="Responder à gerência..."></textarea>
+        <button>Enviar</button>
+      </div>
+    </section>
+  </main>
 
-            <h2>Mensagens da Gerência</h2>
-            <div class="mensagens">
-                <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
-                <textarea placeholder="Responder à gerência..."></textarea>
-                <button>Enviar</button>
-            </div>
-        </section>
-    </main>
-
-  <footer style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-top: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
+   <footer style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-top: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
     <p>&copy; 2025 Hipermercado Super</p>
   </footer>
 </body>

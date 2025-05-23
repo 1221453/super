@@ -166,7 +166,7 @@
 <body>
   <header style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-bottom: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-      <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">Detalhes do Produto</h1>
+      <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">Produto</h1>
       <nav>
         <ul style="list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0;">
           <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Início</a></li>
@@ -179,19 +179,19 @@
 
   <main class="product-card">
     <section class="product-image">
-      <img src="images/integral_arroz.jpg" alt="Maçãs Gala" />
+      <img src="images/integral_arroz.jpg" alt="integral_arroz" />
     </section>
     <section class="product-details">
       <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <h1 style="margin: 0;">Arroz Integral Biológico</h1>
+        <h1 style="margin: 0;">Arroz Integral</h1>
         <span class="stars" style="color: gold; font-size: 1.5rem;">★★★★☆</span>
       </div>
-      <p class="brand">Marca: Portugal</p>
+      <p class="brand"><strong>Marca: </strong> Caçarola</p>
       <p class="description">Arroz integral biológico de alta qualidade, rico em fibras e ideal para uma alimentação saudável e equilibrada.</p>
-      <p class="price">€2,49 / kg</p>
+      <p class="price">€1,49 / kg</p>
 
       <div class="quantity">
-        <label for="qty">Quantidade (kg):</label>
+        <label for="qty"><strong>Quantidade (kg):</strong></label>
         <input id="qty" type="number" min="1" value="1" />
       </div>
 
@@ -222,7 +222,7 @@
     <textarea placeholder="Descreva a sua experiência com este produto..."></textarea>
     <div class="rating-input">
       <label for="rating">Avaliação:</label>
-      <select id="rating" style="color: gold; font-size: 1.2rem;">
+      <select id="rating" style="color: rgb(0, 0, 0); font-size: 1.2rem;">
         <option value="5">★★★★★</option>
         <option value="4">★★★★☆</option>
         <option value="3">★★★☆☆</option>

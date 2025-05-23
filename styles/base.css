@@ -129,7 +129,7 @@ body {
     padding: 2rem;
     border-radius: 8px;
     font-weight: bold;
-    width: 220px;               /* largura fixa para centralizar */
+    width: 220px;               /* largura fixa para centrar */
     margin: 0 auto; 
 }
 
@@ -137,18 +137,24 @@ body {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid gray;
 }
 
 .footer-links a {
     margin-right: 1rem;
     text-decoration: none;
-    color: hsl(212, 72%, 93%);
+    color: #008CFF;
 }
 
-.social-icons span {
-    margin-left: 1rem;
-    font-size: 1.2rem;
+.social-icons a {
+    margin: 0 0.5rem;
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
 }
 
 main {
@@ -178,7 +184,7 @@ main {
 }
 
 footer {
-    background-color: #008CFF;
+    background-color: white;
     color: white;
     text-align: center;
     padding: 1rem;

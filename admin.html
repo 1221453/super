@@ -6,62 +6,80 @@
     <title>Área do Administrador</title>
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Administrador - Painel de Gestão</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="admin.html">Admin</a></li>
-                <li><a href="index.html">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="admin-main">
-        <aside class="menu-admin">
-            <ul>
-                <li><a href="#">KPI’s</a></li>
-                <li><a href="#">Relatórios</a></li>
-                <li><a href="#">Promoções</a></li>
-                <li><a href="#">Utilizadores</a></li>
-            </ul>
-        </aside>
-
-        <section class="painel-admin">
-            <h2>Indicadores de Performance</h2>
-            <div class="graficos">
-                <div class="grafico">📊 Produtos Mais Vendidos</div>
-                <div class="grafico">📉 Stock Crítico</div>
+    <div class="linha-topo"></div>
+    <div class="container">
+        <header class="top-bar">
+            <div class="logo">
+                <div class="logo-box">S</div>
+                <span class="logo-text">logotipo</span>
             </div>
+            <div class="nav-buttons">
+                <a href="#" class="btn">UTILIZADORES</a>
+                <a href="#" class="btn">PRODUTOS</a>
+                <a href="#" class="btn">RELATÓRIOS</a>
+                <a href="#" class="btn">CONFIGURAÇÕES</a>
+                <a href="index.html" class="btn">LOGOUT</a>
+            </div>
+            <div class="search-wrapper">
+                <div class="search-bar
+            <div class="search-bar">
+                <form action="#" method="get">
+                    <input type="text" name="q" placeholder="Search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            </div>
+        </header>
 
-            <h2>Relatórios</h2>
-            <table>
-                <thead>
-                    <tr><th>Data</th><th>Tipo</th><th>Resumo</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>20/05/2025</td><td>Vendas</td><td>Relatório semanal de vendas</td></tr>
-                    <tr><td>20/05/2025</td><td>Compras</td><td>Relatório de encomendas a fornecedores</td></tr>
-                </tbody>
-            </table>
+        <main class="admin-layout">
+            <section class="gestao">
+                <div class="gestao-utilizadores">
+                    <h2>GESTÃO DE UTILIZADORES <button class="criar">CRIAR UTILIZADOR</button></h2>
+                    <table>
+                        <thead>
+                            <tr><th>NOME</th><th>EMAIL</th><th>FUNÇÃO</th><th>REMOVER</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>———</td><td>———</td><td>———</td><td>———</td></tr>
+                            <tr><td>———</td><td>———</td><td>———</td><td>———</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="configuracoes">
+                    <h2>CONFIGURAÇÕES</h2>
+                    <label>Nome do Site</label>
+                    <input type="text" value="********">
+                    <label>Email de Contacto</label>
+                    <input type="text" value="********">
+                    <label>Opções</label>
+                    <textarea></textarea>
+                    <button class="guardar">GUARDAR ALTERAÇÕES</button>
+                </div>
+            </section>
 
-            <h2>Gestão de Utilizadores</h2>
-            <table>
-                <thead>
-                    <tr><th>Nome</th><th>Email</th><th>Ações</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Joana Silva</td><td>joana@empresa.com</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
-                    <tr><td>Carlos Rocha</td><td>carlos@empresa.com</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+            <section class="relatorios">
+                <h2>RELATÓRIOS DO SISTEMA</h2>
+                <a href="#">RELATÓRIO MENSAL</a><br>
+                <a href="#">RESUMO DE DESEMPENHO</a>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Hipermercado Super</p>
-    </footer>
+        <div class="linha-rodape-total"></div>
+        <footer class="footer-links">
+            <div>
+                <a href="#">Contactos</a>
+                <a href="#">Links úteis</a>
+                <a href="#">Termo de Serviço</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

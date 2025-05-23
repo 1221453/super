@@ -1,86 +1,193 @@
 
-.admin-main {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+}
+
+.container {
+   
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.linha-topo {
+    height: 1px;
+    background-color: gray;
+    width: 100%;
+}
+
+.top-bar {
+    top: 0;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
-.menu-admin {
-    width: 200px;
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-right: 1px solid #ccc;
-}
-
-.menu-admin ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-admin li {
-    margin: 1rem 0;
-}
-
-.menu-admin a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: bold;
-}
-
-.painel-admin {
-    flex: 1;
-    padding: 1rem 2rem;
-}
-
-.graficos {
+.logo {
+    position: absolute;
+    top: 1%;
+    left: 5%;
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.grafico {
-    flex: 1;
-    background-color: #ffffff;
+.logo-box {
+    position: relative;
+    top: 1%;
+    background-color: #008CFF;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.nav-buttons .btn {
+    position: relative;
+    left: 40%;
+    padding: 0.5rem 1rem;
+    background-color: #dceeff;
+    border: 1px solid #aad1f1;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 0.25rem;
+}
+
+.search-wrapper {
+    margin-left: auto;
+}
+
+.search-bar input {
+    position: relative;
+    top: -5px;
+    left: -5%;
+    padding: 0.5rem;
+}
+
+.search-bar button {
+    position: relative;
+    top: -5px;
+    left: -5%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gestao {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.gestao-utilizadores, .configuracoes {
+    border: 1px solid #000;
     padding: 1rem;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    flex: 1;
+}
+
+.gestao-utilizadores h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.criar {
+    background-color: #008CFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.configuracoes input,
+.configuracoes textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.2rem;
+}
+
+.guardar {
+    background-color: #008CFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.relatorios {
+    border: 1px solid #000;
+    padding: 1rem;
+}
+
+.relatorios a {
+    color: blue;
+    font-weight: bold;
 }
 
 table {
     width: 100%;
+    border: 1px solid black;
     border-collapse: collapse;
-    margin-bottom: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 1rem;
 }
 
-table thead {
-    background-color: #3498db;
-    color: white;
+th, td {
+    border: 1px solid black;
+    padding: 0.75rem;
+    text-align: center;
 }
 
-table th, table td {
-    padding: 0.75rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
+.linha-rodape-total {
+    position: relative;
+    right: 15%;
+    height: 1px;
+    background-color: gray;
+    width: 100%;
+    margin:  0 0 0;
 }
 
-table tr:last-child td {
-    border-bottom: none;
+.footer-links {
+    display: flex;
+    justify-content: space-between; /* ou space-around */
+    align-items: left;
+    padding: 1rem 0;
+    font-size: 0.9rem;
 }
 
-button {
-    padding: 0.5rem 0.75rem;
-    background-color: #e67e22;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 0.5rem;
+.footer-links a {
+    margin-right: 1rem;
+    color: #008CFF;
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: #d35400;
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+}
+.social-icons a {
+color: black;
+    font-size: 1.4rem;
+    text-decoration: none;
 }

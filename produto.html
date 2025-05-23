@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produto</title>
   <link rel="stylesheet" href="styles/produto.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <div class="navbar">
       <div class="logo">S</div>
-      <span class="logotipo">logotipo</span>
+      <span class="logotipo">SUPER</span>
       <input type="text" placeholder="Search" />
       <button>🔍</button>
       <nav>
@@ -18,56 +19,63 @@
         <a href="#">CONTACTOS</a>
       </nav>
     </div>
-    <div class="url">https://www.example.com/product</div>
   </header>
 
   <main>
-    <section class="product">
-      <div class="left-column">
-        <h2>Arroz Integral</h2>
-        <div class="rating">★★★★★</div>
-        <div class="product-image"></div>
-      </div>
+    <div class="product-card">
+  <!-- Coluna 1: imagem e nome -->
+  <div class="column product-image">
+    <img src="images/integral_arroz.jpg" alt="Arroz Integral">
+  </div>
 
-      <div class="center-column">
-        <h3>Preço</h3>
-        <p>Quant. xx</p>
-        <p>Disponibilidade: 115</p>
-        <button class="cart-btn">Carrinho</button>
-      </div>
+  <!-- Coluna 2: preço e disponibilidade -->
+  <div class="column price-box">
+     <h2>Arroz Integral</h2>
+    <div class="stars">★★★★★</div>
+    <div class="price">
+    <h2>1.49€ / kg</h2></div>
+    <div class= "quantity"></div>
+    <p>Quantidade (kg): 4 </p>
+    <p>Stock: 150</p>
+    <button>Carrinho</button>
+  </div>
 
-      <div class="right-column">
-        <h3>Descrição</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.</p>
-        <p>Sed sit amet ipsum mauris.</p>
-        <p>Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
-      </div>
-    </section>
+  <!-- Coluna 3: descrição -->
+  <div class="column description-box">
+    <h3>Descrição</h3>
+    <p>Arroz integral, extra longo, biológico e rico em fibras, ideal para uma alimentação saudável e equilibrada.</p>
+  </div>
+</div>
 
-    <section class="bottom-boxes">
-      <div class="comments">
-        <h4>Comentários:</h4>
-        <p>Comentário exemplo 1</p>
-        <p>Comentário exemplo 2</p>
-      </div>
-      <div class="suggestions">
-        <h4>Sugestões:</h4>
-        <p>Produto relacionado 1</p>
-        <p>Produto relacionado 2</p>
-      </div>
+<!-- Comentários e sugestões -->
+<div class="bottom-section">
+  <div class="box">
+    <h3>Comentários:</h3>
+    <p><strong>Joana:</strong> Arroz muito saboroso! Excelente para uma refeição saudável.</p>
+    <p><strong>Carlos:</strong> Boa qualidade, mas achei um pouco caro.</p>
+  </div>
+  <div class="box">
+    <h3>Sugestões:</h3>
+    <p>Produto relacionado 1</p>
+    <p>Produto relacionado 2</p>
+  </div>
+</div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-links">
+  <div class="linha-rodape-total"></div>
+
+  <footer class="footer-links">
+    <div class="footer-text">
       <a href="#">Contactos</a>
       <a href="#">Links úteis</a>
       <a href="#">Termo de Serviço</a>
     </div>
-    <div class="socials">
-      <a href="#">🔗</a>
-      <a href="#">📘</a>
-      <a href="#">🐦</a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </footer>
 </body>

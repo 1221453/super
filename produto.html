@@ -1,65 +1,240 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhe do Produto</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/produto.css">
+  <meta charset="UTF-8" />
+  <title>Produto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #007BFF;
+      --secondary: #f0f0f0;
+      --price: #d32f2f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: var(--secondary);
+      padding: 2rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product-image {
+      flex: 1 1 300px;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .product-details {
+      flex: 1 1 400px;
+      padding: 2rem;
+    }
+
+    .product-details h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-details .brand {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .product-details .description {
+      margin: 1rem 0;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      color: var(--price);
+      font-weight: 600;
+    }
+
+    .quantity {
+      margin: 1rem 0;
+    }
+
+    .quantity input {
+      width: 60px;
+      padding: 0.5rem;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .buttons button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buttons button:hover {
+      background: #0056b3;
+    }
+
+    .reviews-section, .add-review {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+
+    .reviews-section h2, .add-review h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .review {
+      border-top: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.2rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      resize: vertical;
+    }
+
+    .rating-input {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .rating-input select {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Detalhes do Produto</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="pesquisa.html">Pesquisar</a></li>
-                <li><a href="login.html">Login</a>
-            </ul>
-        </nav>
-    </header>
+  <header style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-bottom: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+      <h1 style="margin: 0; font-size: 1.5rem; font-weight: 600;">Detalhes do Produto</h1>
+      <nav>
+        <ul style="list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0;">
+          <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Início</a></li>
+          <li><a href="pesquisa.html" style="color: white; text-decoration: none; font-weight: 500;">Pesquisar</a></li>
+          <li><a href="login.html" style="color: white; text-decoration: none; font-weight: 500;">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="produto-detalhe">
-        <section class="info-produto">
-            <img src="images/integral_arroz.jpg" alt="integral_arroz">
-            <div class="dados-produto">
-                <h2>Arroz Integral</h2>
-                <p><strong>Descrição:</strong> Arroz integral biológico</p>
-                <p><strong>Preço:</strong> 1,99€</p>
-                <p><strong>Stock disponível:</strong> 24 unidades</p>
-                <p><strong>Localização:</strong> Corredor 3 - Prateleira B</p>
-                <button>Adicionar à Lista</button>
-                <button>Adicionar à Despensa</button>
-            </div>
-        </section>
+  <main class="product-card">
+    <section class="product-image">
+      <img src="https://via.placeholder.com/400x400?text=Ma%C3%A7%C3%A3s+Gala" alt="Maçãs Gala" />
+    </section>
+    <section class="product-details">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <h1 style="margin: 0;">Arroz Integral Biológico</h1>
+        <span class="stars" style="color: gold; font-size: 1.5rem;">★★★★☆</span>
+      </div>
+      <p class="brand">Marca: Portugal</p>
+      <p class="description">Arroz integral biológico de alta qualidade, rico em fibras e ideal para uma alimentação saudável e equilibrada.</p>
+      <p class="price">€2,49 / kg</p>
 
-        <section class="secao-avaliacoes">
-            <h3>Avaliações dos Clientes</h3>
-            <div class="avaliacao">
-                <strong>Maria:</strong> ⭐⭐⭐⭐☆ - "Muito saboroso!"
-            </div>
-            <div class="avaliacao">
-                <strong>João:</strong> ⭐⭐⭐⭐⭐ - "Excelente qualidade e preço."
-            </div>
+      <div class="quantity">
+        <label for="qty">Quantidade (kg):</label>
+        <input id="qty" type="number" min="1" value="1" />
+      </div>
 
-            <form class="form-avaliacao">
-                <label for="comentario">Deixe a sua avaliação:</label>
-                <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
-                <label for="estrelas">Classificação:</label>
-                <select id="estrelas">
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                    <option value="2">⭐⭐</option>
-                    <option value="1">⭐</option>
-                </select>
-                <button type="submit">Submeter Avaliação</button>
-            </form>
-        </section>
-    </main>
+      <div class="buttons" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <button class="add-to-cart" style="margin-bottom: 1rem; width: 100%; max-width: 300px;">Adicionar ao carrinho</button>
+        <div style="display: flex; justify-content: space-between; width: 100%; max-width: 300px;">
+          <button class="add-to-list" style="flex: 0 0 48%; background: transparent; border: 1px solid var(--primary); color: var(--primary); font-size: 0.95rem;">Adicionar à lista</button>
+          <button class="add-to-pantry" style="flex: 0 0 48%; background: transparent; border: 1px solid var(--primary); color: var(--primary); font-size: 0.95rem;">Adicionar à despensa</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Hipermercado Super</p>
-    </footer>
+  <section class="reviews-section">
+    <h2>Avaliações dos Clientes</h2>
+    <div class="review">
+      <p><strong>Joana:</strong> Maçãs muito saborosas e frescas!</p>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="review">
+      <p><strong>Carlos:</strong> Boa qualidade, mas achei um pouco caras.</p>
+      <div class="stars">★★★☆☆</div>
+    </div>
+  </section>
+
+  <section class="add-review">
+    <h2>Escreva a sua Avaliação</h2>
+    <textarea placeholder="Descreva a sua experiência com este produto..."></textarea>
+    <div class="rating-input">
+      <label for="rating">Avaliação:</label>
+      <select id="rating" style="color: gold; font-size: 1.2rem;">
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+    </div>
+    <button class="add-to-cart" style="background: var(--primary); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-size: 1rem; cursor: pointer; transition: background 0.3s; max-width: 300px; width: 100%; margin: 0 auto; display: block;">Submeter Avaliação</button>
+  </section>
+
+  <footer style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-top: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
+    <p>&copy; 2025 Hipermercado Super</p>
+  </footer>
 </body>
 </html>

@@ -63,23 +63,37 @@ body {
 
 .search-wrapper {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .search-bar input {
-    position: relative;
-    top: -5px;
-    left: -5%;
-    padding: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
 }
 
 .search-bar button {
-    position: relative;
-    top: -5px;
-    left: -5%;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    background-color: #008CFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 0.9rem;
 }
+
+.search-bar button i {
+    pointer-events: none;
+}
+
 
 .admin-layout {
     display: flex;
@@ -95,8 +109,8 @@ body {
 
 .gestao-utilizadores, .configuracoes {
     border: 1px solid #000;
-    padding: 1rem;
-    flex: 1;
+    padding: 0.7rem 0.5rem;
+    flex: 1rem;
 }
 
 .gestao-utilizadores h2 {
@@ -117,8 +131,8 @@ body {
 
 .configuracoes input,
 .configuracoes textarea {
-    display: block;
-    width: 100%;
+    display: flex;
+    width: 80%;
     margin-bottom: 1rem;
     padding: 0.2rem;
 }
@@ -129,7 +143,7 @@ body {
     font-weight: bold;
     border: none;
     padding: 0.6rem;
-    width: 100%;
+    width: 70%;
     border-radius: 4px;
 }
 
@@ -169,11 +183,12 @@ th, td {
     display: flex;
     justify-content: space-between; /* ou space-around */
     align-items: left;
-    padding: 1rem 0;
+    padding: 1rem 5rem;
     font-size: 0.9rem;
 }
 
 .footer-links a {
+    padding: 0rem 0;
     margin-right: 1rem;
     color: #008CFF;
     text-decoration: none;
@@ -184,7 +199,7 @@ th, td {
     gap: 1rem;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 2rem;
+    padding-right: 5rem;
 }
 .social-icons a {
     color: black;

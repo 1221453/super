@@ -24,30 +24,55 @@
                 <a href="index.html" class="btn">LOGOUT</a>
             </div>
             <div class="search-wrapper">
-                <div class="search-bar
-            <div class="search-bar">
-                <form action="pesquisa.html" method="get">
+                <form action="pesquisa.html" method="get" class="search-bar">
                     <input type="text" name="q" placeholder="Search">
-                    <button type="submit">🔍</button>
+                    <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
-            </div>
+                </div>
             </div>
         </header>
 
         <main class="admin-layout">
-            <section class="gestao">
-                <div class="gestao-utilizadores">
-                    <h2>GESTÃO DE UTILIZADORES <button class="criar">CRIAR UTILIZADOR</button></h2>
-                    <table>
-                        <thead>
-                            <tr><th>NOME</th><th>EMAIL</th><th>FUNÇÃO</th><th>REMOVER</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Susana Vieira</td><td>1221453@isep.ipp.pt</td><td>Estudante</td><td>Não</td></tr>
-                            <tr><td>João Brandão</td><td>1221446@isep.ipp.pt</td><td>Estudante</td><td>Não</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+          <section class="gestao">
+  <div class="gestao-utilizadores">
+    <h2>GESTÃO DE UTILIZADORES 
+      <button type="button" class="criar">CRIAR UTILIZADOR</button>
+    </h2>
+    <form action="gestao_utilizadores.php" method="post">
+      <table>
+        <thead>
+          <tr>
+            <th>NOME</th>
+            <th>EMAIL</th>
+            <th>FUNÇÃO</th>
+            <th>REMOVER</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Susana Vieira</td>
+            <td>1221453@isep.ipp.pt</td>
+            <td>Estudante</td>
+            <td>
+              <input type="checkbox" name="remover[]" value="1221453@isep.ipp.pt">
+            </td>
+          </tr>
+          <tr>
+            <td>João Brandão</td>
+            <td>1221446@isep.ipp.pt</td>
+            <td>Estudante</td>
+            <td>
+              <input type="checkbox" name="remover[]" value="1221446@isep.ipp.pt">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="submit" class="guardar">REMOVER SELECIONADOS</button>
+    </form>
+  </div>
+</section>
+
                 <div class="configuracoes">
                     <h2>CONFIGURAÇÕES</h2>
                     <form action="guardar_configuracoes.php" method="post">

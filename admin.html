@@ -14,7 +14,7 @@
         <header class="top-bar">
             <div class="logo">
                 <div class="logo-box">S</div>
-                <span class="logo-text">logotipo</span>
+                <span class="logo-text">Super</span>
             </div>
             <div class="nav-buttons">
                 <a href="#" class="btn">UTILIZADORES</a>
@@ -26,7 +26,7 @@
             <div class="search-wrapper">
                 <div class="search-bar
             <div class="search-bar">
-                <form action="#" method="get">
+                <form action="pesquisa.html" method="get">
                     <input type="text" name="q" placeholder="Search">
                     <button type="submit">🔍</button>
                 </form>
@@ -43,21 +43,26 @@
                             <tr><th>NOME</th><th>EMAIL</th><th>FUNÇÃO</th><th>REMOVER</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>———</td><td>———</td><td>———</td><td>———</td></tr>
-                            <tr><td>———</td><td>———</td><td>———</td><td>———</td></tr>
+                            <tr><td>Susana Vieira</td><td>1221453@isep.ipp.pt</td><td>Estudante</td><td>Não</td></tr>
+                            <tr><td>João Brandão</td><td>1221446@isep.ipp.pt</td><td>Estudante</td><td>Não</td></tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="configuracoes">
                     <h2>CONFIGURAÇÕES</h2>
-                    <label>Nome do Site</label>
-                    <input type="text" value="********">
-                    <label>Email de Contacto</label>
-                    <input type="text" value="********">
-                    <label>Opções</label>
-                    <textarea></textarea>
-                    <button class="guardar">GUARDAR ALTERAÇÕES</button>
-                </div>
+                    <form action="guardar_configuracoes.php" method="post">
+                        <label for="site-name">Nome do Site</label>
+                        <input type="text" id="site-name" name="site_name" value="********" required>
+
+                        <label for="contact-email">Email de Contacto</label>
+                        <input type="email" id="contact-email" name="contact_email" value="********" required>
+
+                        <label for="opcoes">Opções</label>
+                        <textarea id="opcoes" name="opcoes" rows="4" cols="50"></textarea>
+
+                        <button type="submit" class="guardar">GUARDAR ALTERAÇÕES</button>
+                    </form>
+                    </div>
             </section>
 
             <section class="relatorios">

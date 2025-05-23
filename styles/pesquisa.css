@@ -1,28 +1,36 @@
 
-.barra-pesquisa {
-    text-align: center;
-    margin: 1rem auto;
+.search-wrapper {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
-.barra-pesquisa input {
-    width: 60%;
-    padding: 0.5rem;
-    font-size: 1rem;
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.barra-pesquisa button {
-    padding: 0.5rem 1rem;
-    background-color: #3498db;
+.search-bar input {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.search-bar button {
+    padding: 0.4rem 0.6rem;
+    background-color: #008CFF;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
-.barra-pesquisa button:hover {
-    background-color: #2980b9;
+.search-bar button i {
+    pointer-events: none;
 }
-
 .filtros {
     background-color: #f9f9f9;
     padding: 1rem;

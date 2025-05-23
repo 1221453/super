@@ -1,3 +1,11 @@
+.linha-topo {
+    height: 1px;
+    background-color: gray; /* ou usa a cor da tua identidade visual */
+    width: 100%;
+    position: absolute;
+    top:7.5px;
+    z-index: 1000;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -28,20 +36,28 @@ body {
 }
 
 .logo {
+    position: relative;
+    top: 2.5px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .logo-box {
+    position: relative;
+    top: auto;
+    right: 27%;
     background-color: #008CFF;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .search-bar {
+    position: relative;
+    top: 1rem;
+    left: 75%;
     display: flex;
     align-items: left;
     gap: 0.25rem;
@@ -52,10 +68,19 @@ body {
     padding: 0.5rem;
 }
 
+.search-bar button {
+    font-size: 0.8rem; /* aumenta o emoji */
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+}
+
 .nav-buttons .btn {
+    position: relative;
+    top: 1.2rem;
+    left: 180%;
     display: inline-block;
     margin: 0.25rem;
-    padding: 0.4rem 1rem;
+    padding: 0.6rem 1rem;
     background-color: #e0eefe;
     border: 1px solid #b0d4f1;
     border-radius: 4px;
@@ -69,23 +94,27 @@ body {
 }
 
 .login-box {
+    display: block;
+    position: relative;
+    top: 1rem;
     border: 1px solid #ccc;
     padding: 1rem;
     max-width: 200px;
+    height: 320px;
     font-size: 0.9rem;
     align-self: flex-start;
     margin-left: auto;
 }
 
 .login-box input {
-    width: 100%;
+    width: 80%;
     margin-bottom: 0.5rem;
     padding: 0.25rem;
 }
 
 .login-box .sign-in,
 .login-box .sign-up {
-    width: 100%;
+    width: 80%;
     padding: 0.5rem;
     background-color: #6cb2ff;
     color: white;
@@ -118,7 +147,7 @@ body {
     background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
     position: absolute;
     top:35%;
-    left: 21.5%;
+    left: 20%;
     transform: translate(-60%, -60%);
     height: 120px;
     padding: 3rem;
@@ -132,7 +161,7 @@ body {
 background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
     position: absolute;
     top:35%;
-    left: 65%;
+    left: 60%;
     transform: translate(-60%, -60%);
     height: 120px;
     padding: 3rem;
@@ -146,35 +175,13 @@ background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20
     background-color: #007bff;
     color: white;
     text-align: center;
-    padding: 3rem;
+    position: relative;
+    left: -1%;
+    padding: 4rem;
     border-radius: 8px;
     font-weight: bold;
-    width: 1350px;               /* largura fixa para centrar */
-    margin: 0 auto; 
-}
-
-.footer-links {
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid gray;
-}
-
-.footer-links a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #008CFF;
-}
-
-.social-icons a {
-    margin: 0 0.5rem;
-    color: black;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    color: #0056b3;
+    width: 1300px;               /* largura fixa para centrar */
+    margin: auto; 
 }
 
 main {
@@ -203,12 +210,52 @@ main {
     border-radius: 4px;
 }
 
+.linha-rodape-total {
+    height: 1px;
+    background-color: gray;
+    width: 1580px;
+    margin-top: 0;
+    position: absolute;
+    left: -5%;
+    right: 0;
+    z-index: 1000;
+}
+
 footer {
-    background-color: white;
+    background-color:#ffffff00;
     color: white;
     text-align: center;
     padding: 1rem;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.footer-links {
+    position: relative;
+    left: -2%;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-links a {
+    position: relative;
+    right: 10%;
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #008CFF;  
+}
+
+.social-icons a {
+    position: relative;
+    right: 50%;
+    margin: 0 0.5rem;
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
 }

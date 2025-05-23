@@ -21,6 +21,7 @@ body {
 }
 
 .container {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -115,6 +116,25 @@ body {
 
 .promo-box {
     background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
+    position: absolute;
+    top:35%;
+    left: 21.5%;
+    transform: translate(-60%, -60%);
+    height: 120px;
+    padding: 3rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.promo-box2 {
+background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
+    position: absolute;
+    top:35%;
+    left: 65%;
+    transform: translate(-60%, -60%);
+    height: 120px;
     padding: 3rem;
     text-align: center;
     font-weight: bold;
@@ -126,7 +146,7 @@ body {
     background-color: #007bff;
     color: white;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
     border-radius: 8px;
     font-weight: bold;
     width: 1350px;               /* largura fixa para centrar */

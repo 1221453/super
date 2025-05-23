@@ -30,17 +30,24 @@
                 </div>
             </div>
 
-            <div class="login-box">
-                <h3>Sign In</h3>
-                <label>User Name:</label>
-                <input type="text" value="johndoe">
-                <label>Password:</label>
-                <input type="password" value="********">
-                <button class="sign-in">SIGN IN</button>
+          <div class="login-box">
+            <h3>Sign In</h3>
+            <form action="processa_login.php" method="post">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username" value="johndoe" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="********" required>
+
+                <button type="submit" class="sign-in">SIGN IN</button>
                 <a href="#">Forgot Password?</a>
-                <h4>New User</h4>
-                <button class="sign-up">SIGN UP</button>
-            </div>
+            </form>
+
+  <h4>New User</h4>
+  <form action="registo.php" method="post">
+    <button type="submit" class="sign-up">SIGN UP</button>
+  </form>
+</div>
         </header>
 
         <main class="conteudo">

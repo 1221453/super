@@ -129,7 +129,7 @@ body {
     padding: 2rem;
     border-radius: 8px;
     font-weight: bold;
-    width: 220px;               
+    width: 220px;               /* largura fixa para centralizar */
     margin: 0 auto; 
 }
 

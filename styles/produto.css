@@ -103,9 +103,21 @@ main {
     background: #007BFF;
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    width: 15rem;
+  }
+
+  .button.add {
+    margin-top: 1rem;
+    color: #007BFF;
+    background: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 15rem;
   }
 
   .bottom-section {

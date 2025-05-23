@@ -1,89 +1,155 @@
+    :root {
+      --primary: #007BFF;
+      --secondary: #f0f0f0;
+      --price: #d32f2f;
+    }
 
-.produto-detalhe {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+    }
 
-.info-produto {
-    display: flex;
-    gap: 2rem;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    body {
+      background: var(--secondary);
+      padding: 2rem;
+    }
 
-.info-produto img {
-    max-width: 200px;
-    border-radius: 8px;
-    object-fit: contain;
-}
+    .product-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-.dados-produto {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+    .product-image {
+      flex: 1 1 300px;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
 
-.dados-produto button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    width: fit-content;
-}
+    .product-image img {
+      max-width: 100%;
+      object-fit: contain;
+    }
 
-.dados-produto button:hover {
-    background-color: #1e8449;
-}
+    .product-details {
+      flex: 1 1 400px;
+      padding: 2rem;
+    }
 
-.secao-avaliacoes {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    .product-details h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
 
-.avaliacao {
-    margin-bottom: 1rem;
-}
+    .product-details .brand {
+      color: #666;
+      margin-bottom: 1rem;
+    }
 
-.form-avaliacao {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+    .product-details .description {
+      margin: 1rem 0;
+    }
 
-.form-avaliacao textarea {
-    width: 100%;
-    height: 80px;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
+    .price {
+      font-size: 2.5rem;
+      color: var(--price);
+      font-weight: 600;
+    }
 
-.form-avaliacao select {
-    width: 150px;
-    padding: 0.4rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
+    .quantity {
+      margin: 1rem 0;
+    }
 
-.form-avaliacao button {
-    width: fit-content;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .quantity input {
+      width: 60px;
+      padding: 0.5rem;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      margin-left: 0.5rem;
+    }
 
-.form-avaliacao button:hover {
-    background-color: #2980b9;
-}
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .buttons button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .buttons button:hover {
+      background: #0056b3;
+    }
+
+    .reviews-section, .add-review {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+
+    .reviews-section h2, .add-review h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .review {
+      border-top: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.2rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      resize: vertical;
+    }
+
+    .rating-input {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .rating-input select {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex-direction: column;
+      }
+    }

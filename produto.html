@@ -2,82 +2,73 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <title>Produto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/produto.css"/>
+  <title>Produto</title>
+  <link rel="stylesheet" href="styles/produto.css" />
 </head>
 <body>
   <header>
-    <div class="header-container">
-      <h1>Produto</h1>
+    <div class="navbar">
+      <div class="logo">S</div>
+      <span class="logotipo">logotipo</span>
+      <input type="text" placeholder="Search" />
+      <button>🔍</button>
       <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="pesquisa.html">Pesquisar</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
+        <a href="#">PRODUTOS</a>
+        <a href="#">CONTACTOS</a>
       </nav>
     </div>
+    <div class="url">https://www.example.com/product</div>
   </header>
 
-  <main class="product-card">
-    <section class="product-image">
-      <img src="images/integral_arroz.jpg" alt="Arroz integral" />
+  <main>
+    <section class="product">
+      <div class="left-column">
+        <h2>Arroz Integral</h2>
+        <div class="rating">★★★★★</div>
+        <div class="product-image"></div>
+      </div>
+
+      <div class="center-column">
+        <h3>Preço</h3>
+        <p>Quant. xx</p>
+        <p>Disponibilidade: 115</p>
+        <button class="cart-btn">Carrinho</button>
+      </div>
+
+      <div class="right-column">
+        <h3>Descrição</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.</p>
+        <p>Sed sit amet ipsum mauris.</p>
+        <p>Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
+      </div>
     </section>
-    <section class="product-details">
-      <div class="title-rating">
-        <h1>Arroz Integral</h1>
-        <span class="stars">★★★★☆</span>
-      </div>
-      <p class="brand"><strong>Marca: </strong> Caçarola</p>
-      <p class="description">Arroz integral, extra longo, biológico e rico em fibras, ideal para uma alimentação saudável e equilibrada.</p>
-      <p class="price">€1,49 / kg</p>
 
-      <div class="quantity">
-        <label for="qty"><strong>Quantidade (kg):</strong></label>
-        <input id="qty" type="number" min="1" value="1" />
+    <section class="bottom-boxes">
+      <div class="comments">
+        <h4>Comentários:</h4>
+        <p>Comentário exemplo 1</p>
+        <p>Comentário exemplo 2</p>
       </div>
-
-      <div class="buttons">
-        <button class="add-to-cart">Adicionar ao carrinho</button>
-        <div class="action-buttons">
-          <button class="add-to-list">Adicionar à lista</button>
-          <button class="add-to-pantry">Adicionar à despensa</button>
-        </div>
+      <div class="suggestions">
+        <h4>Sugestões:</h4>
+        <p>Produto relacionado 1</p>
+        <p>Produto relacionado 2</p>
       </div>
     </section>
   </main>
 
-  <section class="reviews-section">
-    <h2>Avaliações dos Clientes</h2>
-    <div class="review">
-      <p><strong>Joana:</strong> Arroz muito saboroso! Excelente para uma refeição saudável.</p>
-      <div class="stars">★★★★★</div>
-    </div>
-    <div class="review">
-      <p><strong>Carlos:</strong> Boa qualidade, mas achei um pouco caro.</p>
-      <div class="stars">★★★☆☆</div>
-    </div>
-  </section>
-
-  <section class="add-review">
-    <h2>Escreva a sua Avaliação</h2>
-    <textarea placeholder="Descreva a sua experiência com este produto..."></textarea>
-    <div class="rating-input">
-      <label for="rating">Avaliação:</label>
-      <select id="rating">
-        <option value="5">★★★★★</option>
-        <option value="4">★★★★☆</option>
-        <option value="3">★★★☆☆</option>
-        <option value="2">★★☆☆☆</option>
-        <option value="1">★☆☆☆☆</option>
-      </select>
-    </div>
-    <button class="submit-review">Submeter Avaliação</button>
-  </section>
-
   <footer>
-    <p>&copy; 2025 Hipermercado Super</p>
+    <div class="footer-links">
+      <a href="#">Contactos</a>
+      <a href="#">Links úteis</a>
+      <a href="#">Termo de Serviço</a>
+    </div>
+    <div class="socials">
+      <a href="#">🔗</a>
+      <a href="#">📘</a>
+      <a href="#">🐦</a>
+    </div>
   </footer>
 </body>
 </html>

@@ -42,13 +42,13 @@ body {
 
 .search-bar {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 0.25rem;
     margin-top: 0.5rem;
 }
 
 .search-bar input {
-    padding: 0.4rem;
+    padding: 0.5rem;
 }
 
 .nav-buttons .btn {
@@ -119,7 +119,7 @@ body {
     text-align: center;
     font-weight: bold;
     border-radius: 8px;
-    width: 200px;
+    width: 400px;
 }
 
 .destaques {
@@ -129,7 +129,7 @@ body {
     padding: 2rem;
     border-radius: 8px;
     font-weight: bold;
-    width: 220px;               /* largura fixa para centrar */
+    width: 1350px;               /* largura fixa para centrar */
     margin: 0 auto; 
 }
 

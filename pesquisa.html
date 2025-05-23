@@ -21,20 +21,26 @@
     </header>
 
     <main>
-        <section class="barra-pesquisa">
-            <input type="text" placeholder="Pesquisar por nome, categoria ou marca...">
-            <button>🔍 Pesquisar</button>
-        </section>
+      <div class="search-wrapper">
+  <form action="pesquisa.html" method="get" class="search-bar">
+    <input type="text" name="q" placeholder="Pesquisar produto..." required>
+    <button type="submit"><i class="fas fa-search"></i></button>
+  </form>
+</div>
 
         <aside class="filtros">
-            <h2>Filtros</h2>
-            <label><input type="checkbox"> Preço (0€ - 10€)</label><br>
-            <label><input type="checkbox"> Em promoção</label><br>
-            <label><input type="checkbox"> Novidades</label><br>
-            <label><input type="checkbox"> Mais vendidos</label><br>
-            <label><input type="checkbox"> Vegan</label><br>
-            <label><input type="checkbox"> Sem lactose</label><br>
-        </aside>
+  <h2>Filtros</h2>
+  <form action="pesquisa.html" method="get">
+    <label><input type="checkbox" name="filtro[]" value="preco_0_10"> Preço (0€ - 10€)</label><br>
+    <label><input type="checkbox" name="filtro[]" value="promocao"> Em promoção</label><br>
+    <label><input type="checkbox" name="filtro[]" value="novidades"> Novidades</label><br>
+    <label><input type="checkbox" name="filtro[]" value="mais_vendidos"> Mais vendidos</label><br>
+    <label><input type="checkbox" name="filtro[]" value="vegan"> Vegan</label><br>
+    <label><input type="checkbox" name="filtro[]" value="sem_lactose"> Sem lactose</label><br>
+
+    <button type="submit">Aplicar Filtros</button>
+  </form>
+</aside>
 
         <section class="resultados">
             <h2>Resultados da Pesquisa</h2>

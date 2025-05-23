@@ -1,89 +1,97 @@
 
-.func-main {
-    display: flex;
-}
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+    }
 
-.menu-func {
-    width: 200px;
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-right: 1px solid #ccc;
-}
+    header, footer {
+      background: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      border-bottom: 4px solid #0056b3;
+    }
 
-.menu-func ul {
-    list-style: none;
-    padding: 0;
-}
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
 
-.menu-func li {
-    margin: 1rem 0;
-}
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.menu-func a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: bold;
-}
+    main {
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      gap: 2rem;
+    }
 
-.painel-func {
-    flex: 1;
-    padding: 1rem 2rem;
-}
+    .menu-func ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.form-produto {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-}
+    .menu-func li {
+      margin: 1rem 0;
+      font-weight: bold;
+    }
 
-.form-produto input, .form-produto textarea, .form-produto select {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+    .painel-func {
+      flex: 1;
+    }
 
-.form-produto button {
-    background-color: #2ecc71;
-    color: white;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .bloco {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
 
-.form-produto button:hover {
-    background-color: #27ae60;
-}
+    .linha {
+      display: flex;
+      gap: 1rem;
+    }
 
-.lista-tarefas {
-    list-style: none;
-    padding-left: 1rem;
-}
+    .campo {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
 
-.mensagens {
-    margin-top: 1rem;
-}
+    .campo-menor {
+      flex: 0.3;
+    }
 
-.mensagens textarea {
-    width: 100%;
-    height: 60px;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
+    input[type="text"], input[type="number"], textarea, select {
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
 
-.mensagens button {
-    margin-top: 0.5rem;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.mensagens button:hover {
-    background-color: #2980b9;
-}
+    footer {
+      border-top: 4px solid #0056b3;
+    }

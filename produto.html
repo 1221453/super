@@ -12,8 +12,12 @@
     <div class="navbar">
       <div class="logo">S</div>
       <span class="logotipo">SUPER</span>
-      <input type="text" placeholder="Search" />
-      <button>🔍</button>
+      <div class="search-bar">
+                    <form action="pesquisa.html" method="get">
+                        <input type="text" name="q" placeholder="Search">
+                        <button type="submit">🔍</button>
+                    </form>
+                </div>
       <nav>
         <a href="#">PRODUTOS</a>
         <a href="#">CONTACTOS</a>
@@ -37,10 +41,14 @@
     <div class= "quantity"></div>
     <p>Quantidade (kg): 4 </p>
     <p>Stock: 150</p>
-    <button>Carrinho</button>
+   <form action="/adicionar-produto" method="POST" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+      <button type="submit" name="acao" value="carrinho" style="background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 8px;">Adicionar ao carrinho</button>
+      <button type="submit" name="acao" value="lista" style="background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 8px;">Adicionar à lista</button>
+      <button type="submit" name="acao" value="despensa" style="background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 8px;">Adicionar à despensa</button>
+    </form>
   </div>
 
-  <!-- Coluna 3: descrição -->
+<!-- Coluna 3: descrição -->
   <div class="column description-box">
     <h3>Descrição</h3>
     <p>Arroz integral, extra longo, biológico e rico em fibras, ideal para uma alimentação saudável e equilibrada.</p>
@@ -56,8 +64,8 @@
   </div>
   <div class="box">
     <h3>Sugestões:</h3>
-    <p>Produto relacionado 1</p>
-    <p>Produto relacionado 2</p>
+    <p>Bróculos congelados</p>
+    <p>Frango desfiado</p>
   </div>
 </div>
     </section>

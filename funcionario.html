@@ -8,82 +8,90 @@
 </head>
 <body>
   <header>
+    <div class="logo-barra">
+      <span class="logo-s">S</span>
+      <span class="logo-texto">SUPER</span>
+    </div>
+   <div class="header-conteudo">
     <h1>Funcionário</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="funcionario.html">Funcionário</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><u><a href="index.html">Início</a></u></li>
+        <li><u><a href="funcionario.html">Funcionário</a></u></li>
+        <li><u><a href="#">Logout</a></u></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
   <main>
     <aside class="menu-func">
       <ul>
-        <li>Stock</li>
-        <li>Produtos</li>
-        <li>Tarefas</li>
-        <li>Mensagens</li>
+        <li><u>Stock</u></li>
+        <li><u>Produtos</u></li>
+        <li><u>Tarefas</u></li>
+        <li><u>Mensagens</u></li>
       </ul>
     </aside>
 
-   <div class="bloco">
-    <h2>Gestão de Produtos</h2>
-    <form action="adicionar_produto.php" method="post">
-      <div class="linha">
-        <div class="campo">
-          <label for="nome-produto">Nome do produto</label>
-          <input type="text" id="nome-produto" name="nome_produto" placeholder="Nome do produto" required>
-        </div>
-        <div class="campo campo-menor">
-          <label for="preco">Preço</label>
-          <input type="text" id="preco" name="preco" placeholder="Preço" required>
-        </div>
+    <div class="conteudo-flex">
+      <!-- Bloco Gestão de Produtos -->
+      <div class="bloco">
+        <h2><u>Gestão de Produtos</u></h2>
+        <form action="adicionar_produto.php" method="post">
+          <div class="linha">
+            <div class="campo">
+              <label for="nome-produto">Nome do produto:</label>
+              <input type="text" id="nome-produto" name="nome_produto" placeholder="Ex. Arroz integral" required>
+            </div>
+            <div class="campo campo-menor">
+              <label for="preco">Preço:</label>
+              <input type="text" id="preco" name="preco" placeholder="Ex. 1.49€" required>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" placeholder="Ex. Caçarola" required>
+          </div>
+          <div class="campo">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" placeholder="Ex. Arroz Integral Extra Longo">
+          </div>
+          <button type="submit">Adicionar Produto</button>
+        </form>
       </div>
-      <div class="campo">
-        <label for="marca">Marca</label>
-        <input type="text" id="marca" name="marca" placeholder="Marca" required>
+
+      <!-- Bloco Tarefas Diárias -->
+      <div class="bloco">
+        <h2><u>Tarefas Diárias</u></h2>
+        <form action="atualizar_tarefas.php" method="post">
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="reposicao"> Reposição das prateleiras</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="validade-iogurtes"> Verificar a validade dos iogurtes</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="validade-iogurtes"> Higienização dos carrinhos e cestos</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="validade-iogurtes"> Preparação dos pedidos dos clientes</li>
+          </ul>
+          <button type="submit">Atualizar Tarefas</button>
+        </form>
       </div>
-      <div class="campo">
-        <label for="descricao">Descrição</label>
-        <input type="text" id="descricao" name="descricao" placeholder="Descrição">
+
+      <!-- Bloco Mensagens da Gerência -->
+      <div class="bloco">
+        <h2><u>Mensagens da Gerência</u></h2>
+        <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
+        <form action="enviar_mensagem.php" method="post">
+          <div class="campo">
+            <label for="resposta"><u>Resposta à gerência:</u></label>
+            <textarea id="resposta" name="resposta" class="resposta-fixa" placeholder="Escreve aqui a tua resposta..." required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
       </div>
-      <button type="submit">Adicionar Produto</button>
-    </form>
-  </div>
-
-  <!-- Formulário de Tarefas Diárias -->
-  <div class="bloco">
-    <h2>Tarefas Diárias</h2>
-    <form action="atualizar_tarefas.php" method="post">
-      <ul>
-        <li>
-          <input type="checkbox" name="tarefas[]" value="reposicao"> Reposição de prateleiras
-        </li>
-        <li>
-          <input type="checkbox" name="tarefas[]" value="validade-iogurtes"> Verificar validade dos iogurtes
-        </li>
-      </ul>
-      <button type="submit">Atualizar Tarefas</button>
-    </form>
-  </div>
-
-  <!-- Formulário de Mensagens da Gerência -->
-  <div class="bloco">
-    <h2>Mensagens da Gerência</h2>
-    <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
-    <form action="enviar_mensagem.php" method="post">
-      <textarea name="resposta" placeholder="Responder à gerência..." required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
-</section>
+    </div>
   </main>
 
-   <footer style="background: #007BFF; color: white; text-align: center; padding: 1.5rem; font-size: 0.9rem; border-top: 4px solid #0056b3; width: 100%; box-sizing: border-box;">
-    <p>&copy; 2025 Hipermercado Super</p>
+  <footer>
+    <p style="padding-top: 1rem;">&copy; 2025 Hipermercado Super</p>
   </footer>
 </body>
 </html>

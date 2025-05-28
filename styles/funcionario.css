@@ -1,97 +1,177 @@
+html, body {
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #007BFF;
+  color: white;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
 
 body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f7f9fc;
-    }
+  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+}
 
-    header, footer {
-      background: #007BFF;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      border-bottom: 4px solid #0056b3;
-    }
+.logo-barra {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
+.logo-s {
+  background: white;
+  color: #007BFF;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
 
-    header nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+.logo-texto {
+ color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
-    main {
-      display: flex;
-      max-width: 1200px;
-      margin: 2rem auto;
-      gap: 2rem;
-    }
+.header-conteudo {
+  text-align: center;
+  flex-grow: 1;
+}
 
-    .menu-func ul {
-      list-style: none;
-      padding: 0;
-    }
+.header-conteudo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
 
-    .menu-func li {
-      margin: 1rem 0;
-      font-weight: bold;
-    }
+header, footer {
+  background: #007BFF;
+  color: white;
+  height: 2cm;
+  text-align: center;
+  padding-top: 0.1rem;
+  padding-bottom: 0rem;
+  font-size: 0.9rem;
+}
 
-    .painel-func {
-      flex: 1;
-    }
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
 
-    .bloco {
-      background: white;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    .linha {
-      display: flex;
-      gap: 1rem;
-    }
+main {
+ display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
 
-    .campo {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+.menu-func {
+  width: 160px;
+  margin: 0;
+  padding: 0;
+  color:#007BFF;
+}
 
-    .campo-menor {
-      flex: 0.3;
-    }
+.menu-func ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
 
-    input[type="text"], input[type="number"], textarea, select {
-      padding: 0.5rem;
-      margin-top: 0.3rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
+.menu-func li {
+  margin: 1rem 0;
+  margin-right: 20rem;
+  font-weight: bold;
+}
 
-    button {
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      background: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.conteudo-flex {
+  display: flex;
+  flex: 1;
+  gap: 1.5rem;
+}
 
-    footer {
-      border-top: 4px solid #0056b3;
-    }
+.bloco {
+  flex: 1;
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.linha {
+  display: flex;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.campo-menor {
+  flex: 0.3;
+  width: 8rem;
+}
+
+input[type="text"], textarea {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  border-top: 4px solid #0056b3;
+  height: 2cm;
+}
+
+.resposta-fixa {
+  width: 100%;
+  height: 110px;
+  resize: none;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

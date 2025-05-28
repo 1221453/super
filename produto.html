@@ -7,23 +7,25 @@
   <link rel="stylesheet" href="styles/produto.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-  <header>
-    <div class="navbar">
-      <div class="logo">S</div>
-      <span class="logotipo">SUPER</span>
-      <div class="search-bar">
-                    <form action="pesquisa.html" method="get">
-                        <input type="text" name="q" placeholder="Search">
-                        <button type="submit">🔍</button>
-                    </form>
-                </div>
+<body style="background-color: rgb(200, 222, 241);">
+<header>
+  <div class="header-container">
+    <div class="logo-barra">
+      <span class="logo-s">S</span>
+      <span class="logo-texto">SUPER</span>
+    </div>
+    <div class="header-right">
+      <form action="pesquisa.html" method="get" class="search-bar">
+        <input type="text" name="q" placeholder="Pesquisar..." />
+        <button type="submit">🔍</button>
+      </form>
       <nav>
         <a href="#">PRODUTOS</a>
         <a href="#">CONTACTOS</a>
       </nav>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <div class="product-card">
@@ -50,7 +52,7 @@
 
 <!-- Coluna 3: descrição -->
   <div class="column description-box">
-    <h3>Descrição</h3>
+    <h3><u>Descrição:</u></h3>
     <p>Arroz integral, extra longo, biológico e rico em fibras, ideal para uma alimentação saudável e equilibrada.</p>
   </div>
 </div>
@@ -58,12 +60,12 @@
 <!-- Comentários e sugestões -->
 <div class="bottom-section">
   <div class="box">
-    <h3>Comentários:</h3>
+    <h3><u>Comentários:</u></h3>
     <p><strong>Joana:</strong> Arroz muito saboroso! Excelente para uma refeição saudável.</p>
     <p><strong>Carlos:</strong> Boa qualidade, mas achei um pouco caro.</p>
   </div>
   <div class="box">
-    <h3>Sugestões:</h3>
+    <h3><u>Sugestões:</u></h3>
     <p>Bróculos congelados</p>
     <p>Frango desfiado</p>
   </div>
@@ -75,10 +77,11 @@
 
   <footer class="footer-links">
     <div class="footer-text">
-      <a href="#">Contactos</a>
-      <a href="#">Links úteis</a>
-      <a href="#">Termo de Serviço</a>
+      <u><a href="#">Contactos</a></u>
+      <u><a href="#">Links úteis</a></u>
+      <u><a href="#">Termo de Serviço</a></u>
     </div>
+    <p style="padding-top: 0.5rem;">&copy; 2025 Hipermercado Super</p>
     <div class="social-icons">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>

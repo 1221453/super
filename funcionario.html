@@ -38,7 +38,7 @@
       <!-- Bloco Gestão de Produtos -->
       <div class="bloco">
         <h2><u>Gestão de Produtos</u></h2>
-        <form action="adicionar_produto.php" method="post">
+     <form action="http://localhost/~ASUS/scripts/adicionar_produto.php" method="post">
           <div class="linha">
             <div class="campo">
               <label for="nome-produto">Nome do produto:</label>
@@ -46,7 +46,7 @@
             </div>
             <div class="campo campo-menor">
               <label for="preco">Preço:</label>
-              <input type="text" id="preco" name="preco" placeholder="Ex. 1.49€" required>
+              <input type="text" id="preco" name="preco" placeholder="1.49€" required>
             </div>
           </div>
           <div class="campo">
@@ -64,7 +64,7 @@
       <!-- Bloco Tarefas Diárias -->
       <div class="bloco">
         <h2><u>Tarefas Diárias</u></h2>
-        <form action="atualizar_tarefas.php" method="post">
+    <form action="http://localhost/~ASUS/scripts/atualizar_tarefas.php" method="post">
           <ul style="list-style: none; padding-left: 0;">
             <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="reposicao"> Reposição das prateleiras</li>
             <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="validade-iogurtes"> Verificar a validade dos iogurtes</li>
@@ -79,7 +79,7 @@
       <div class="bloco">
         <h2><u>Mensagens da Gerência</u></h2>
         <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
-        <form action="enviar_mensagem.php" method="post">
+        <form action="http://localhost/~ASUS/scripts/enviar_mensagem.php" method="post">
           <div class="campo">
             <label for="resposta"><u>Resposta à gerência:</u></label>
             <textarea id="resposta" name="resposta" class="resposta-fixa" placeholder="Escreve aqui a tua resposta..." required></textarea>

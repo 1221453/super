@@ -66,10 +66,10 @@
         <h2><u>Tarefas Diárias</u></h2>
         <form action="atualizar_tarefas.php" method="post">
           <ul style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="reposicao"> Reposição das prateleiras</li>
-            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="validade-iogurtes"> Verificar a validade dos iogurtes</li>
-            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="validade-iogurtes"> Higienização dos carrinhos e cestos</li>
-            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas" value="validade-iogurtes"> Preparação dos pedidos dos clientes</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="reposicao"> Reposição das prateleiras</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="validade-iogurtes"> Verificar a validade dos iogurtes</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="higienização"> Higienização dos carrinhos e cestos</li>
+            <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="preparar-pedidos"> Preparação dos pedidos dos clientes</li>
           </ul>
           <button type="submit">Atualizar Tarefas</button>
         </form>

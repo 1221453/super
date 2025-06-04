@@ -1,53 +1,62 @@
 <?php
-// scripts/criar_utilizador.php
 session_start();
-$mensagem = $_SESSION['mensagem'] ?? '';
-unset($_SESSION['mensagem']);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $db = new SQLite3(__DIR__ . '/../db/super.db');
+
+    $nome = trim($_POST['nome'] ?? '');
+    $username = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $tipo = $_POST['tipo'] ?? 'cliente';
+
+    if ($nome && $username && $email && $password) {
+        $stmt = $db->prepare("
+            INSERT INTO utilizadores (username, password, email, tipo) 
+            VALUES (:username, :password, :email, :tipo)
+        ");
+        $stmt->bindValue(':username', $username, SQLITE3_TEXT);
+        $stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), SQLITE3_TEXT);
+        $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+        $stmt->bindValue(':tipo', $tipo, SQLITE3_TEXT);
+
+        if ($stmt->execute()) {
+            $_SESSION['mensagem'] = "✅ Utilizador criado com sucesso.";
+            header('Location: gestao_utilizadores.php');
+            exit;
+        } else {
+            echo "❌ Erro ao inserir na base de dados.";
+        }
+    } else {
+        echo "⚠️ Preenche todos os campos.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Criar Novo Utilizador</title>
-    <link rel="stylesheet" href="styles/base.css">
+  <meta charset="UTF-8">
+  <title>Criar Novo Utilizador</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Criar Novo Utilizador</h2>
+  <h2>Criar Novo Utilizador</h2>
 
-        <?php if ($mensagem): ?>
-            <p style="color: green; font-weight: bold;"><?php echo htmlspecialchars($mensagem); ?></p>
-        <?php endif; ?>
+  <form action="criar_utilizador.php" method="post">
+    Nome: <input type="text" name="nome" required>
+    Username: <input type="text" name="username" required>
+    Email: <input type="email" name="email" required>
+    Password: <input type="password" name="password" required>
+    Função:
+    <select name="tipo">
+      <option value="estudante">Estudante</option>
+      <option value="cliente">Cliente</option>
+      <option value="funcionario">Funcionário</option>
+      <option value="admin">Administrador</option>
+    </select>
+    <button type="submit">CRIAR UTILIZADOR</button>
+  </form>
 
-        <form action="scripts/criar_utilizador.php" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="funcao">Função:</label>
-            <select id="funcao" name="funcao" required>
-                <option value="Estudante">Estudante</option>
-                <option value="Funcionário">Funcionário</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Outro">Outro</option>
-            </select>
-
-            <button type="submit" class="btn">CRIAR UTILIZADOR</button>
-        </form>
-
-        <br><a href="admin.html">← Voltar para Administração</a>
-    </div>
+  <p><a href="../admin.html">⬅ Voltar para Administração</a></p>
 </body>
 </html>

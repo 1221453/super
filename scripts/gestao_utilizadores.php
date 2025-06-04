@@ -6,8 +6,6 @@ $utilizadores = [
     'admin' => ['nome' => 'Administrador', 'funcao' => 'Admin'],
     'funcionario' => ['nome' => 'Funcionário', 'funcao' => 'Funcionário'],
     'cliente' => ['nome' => 'Cliente', 'funcao' => 'Cliente'],
-    '1221453@isep.ipp.pt' => ['nome' => 'Susana Vieira', 'funcao' => 'Estudante'],
-    '1221446@isep.ipp.pt' => ['nome' => 'João Brandão', 'funcao' => 'Estudante'],
 ];
 
 // Obter emails a remover

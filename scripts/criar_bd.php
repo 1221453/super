@@ -1,21 +1,30 @@
 <?php
-// Ativar erros para debugging
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Caminho da base de dados
-$dbPath = __DIR__ . '/../db/super.db';
+session_start();
 
-// Verifica se a pasta "db" existe
-if (!is_dir(dirname($dbPath))) {
-    mkdir(dirname($dbPath), 0777, true);
+// Caminho relativo a partir da pasta scripts/ para ../db/
+$dbPath = realpath(__DIR__ . '/../') . '/db/super.db';
+
+// Verifica e cria a pasta db se não existir
+$dbDir = dirname($dbPath);
+if (!is_dir($dbDir)) {
+    if (!mkdir($dbDir, 0777, true)) {
+        die("❌ Erro: não foi possível criar a pasta 'db' em $dbDir");
+    }
 }
 
 // Cria ou abre a base de dados
-$db = new SQLite3($dbPath);
+try {
+    $db = new SQLite3($dbPath);
+    echo "✅ Base de dados criada em: $dbPath<br>";
+} catch (Exception $e) {
+    die("❌ Erro ao criar a base de dados: " . $e->getMessage());
+}
 
-// Cria a tabela utilizadores
-$db->exec("
+// Cria a tabela
+$result = $db->exec("
     CREATE TABLE IF NOT EXISTS utilizadores (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT NOT NULL UNIQUE,
@@ -25,15 +34,22 @@ $db->exec("
     )
 ");
 
+if (!$result) {
+    die("❌ Erro ao criar tabela: " . $db->lastErrorMsg());
+}
+
 // Inserir utilizadores de exemplo
 $utilizadores = [
     ['admin', 'admin', 'admin@empresa.pt', 'admin'],
     ['joana', '123456', 'joana@empresa.pt', 'funcionario'],
     ['carlos', 'cliente', 'carlos@empresa.pt', 'cliente'],
+    ['susana', 'susana123', '1221453@isep.ipp.pt', 'estudante'],
+    ['joao', 'joao123', '1221446@isep.ipp.pt', 'estudante']
 ];
 
 foreach ($utilizadores as $u) {
-    $stmt = $db->prepare("INSERT OR IGNORE INTO utilizadores (username, password, email, tipo) VALUES (:username, :password, :email, :tipo)");
+    $stmt = $db->prepare("INSERT OR IGNORE INTO utilizadores (username, password, email, tipo) 
+                          VALUES (:username, :password, :email, :tipo)");
     $stmt->bindValue(':username', $u[0], SQLITE3_TEXT);
     $stmt->bindValue(':password', password_hash($u[1], PASSWORD_DEFAULT), SQLITE3_TEXT);
     $stmt->bindValue(':email', $u[2], SQLITE3_TEXT);
@@ -41,5 +57,5 @@ foreach ($utilizadores as $u) {
     $stmt->execute();
 }
 
-echo "✅ Base de dados criada com sucesso em: db/super.db";
+echo "✅ Tabela criada e utilizadores inseridos com sucesso.";
 ?>

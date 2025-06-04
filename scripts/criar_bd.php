@@ -1,31 +1,45 @@
 <?php
+// Ativar erros para debugging
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // Caminho da base de dados
 $dbPath = __DIR__ . '/../db/super.db';
 
-// Cria (ou abre) a base de dados
+// Verifica se a pasta "db" existe
+if (!is_dir(dirname($dbPath))) {
+    mkdir(dirname($dbPath), 0777, true);
+}
+
+// Cria ou abre a base de dados
 $db = new SQLite3($dbPath);
 
-// Criação da tabela 'utilizadores'
-$db->exec('
+// Cria a tabela utilizadores
+$db->exec("
     CREATE TABLE IF NOT EXISTS utilizadores (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT UNIQUE NOT NULL,
+        username TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
-        email TEXT
+        email TEXT UNIQUE NOT NULL,
+        tipo TEXT NOT NULL
     )
-');
+");
 
-// Inserir o admin com password simples (para teste)
-// ⚠️ Usa password_hash() para segurança real
-$adminUser = 'admin';
-$adminPass = password_hash('admin', PASSWORD_DEFAULT); // segura
-$adminEmail = 'admin@exemplo.com';
+// Inserir utilizadores de exemplo
+$utilizadores = [
+    ['admin', 'admin', 'admin@empresa.pt', 'admin'],
+    ['joana', '123456', 'joana@empresa.pt', 'funcionario'],
+    ['carlos', 'cliente', 'carlos@empresa.pt', 'cliente'],
+];
 
-$stmt = $db->prepare('INSERT OR IGNORE INTO utilizadores (username, password, email) VALUES (:u, :p, :e)');
-$stmt->bindValue(':u', $adminUser, SQLITE3_TEXT);
-$stmt->bindValue(':p', $adminPass, SQLITE3_TEXT);
-$stmt->bindValue(':e', $adminEmail, SQLITE3_TEXT);
-$stmt->execute();
+foreach ($utilizadores as $u) {
+    $stmt = $db->prepare("INSERT OR IGNORE INTO utilizadores (username, password, email, tipo) VALUES (:username, :password, :email, :tipo)");
+    $stmt->bindValue(':username', $u[0], SQLITE3_TEXT);
+    $stmt->bindValue(':password', password_hash($u[1], PASSWORD_DEFAULT), SQLITE3_TEXT);
+    $stmt->bindValue(':email', $u[2], SQLITE3_TEXT);
+    $stmt->bindValue(':tipo', $u[3], SQLITE3_TEXT);
+    $stmt->execute();
+}
 
-echo "✅ Base de dados criada em: db/super.db";
+echo "✅ Base de dados criada com sucesso em: db/super.db";
 ?>

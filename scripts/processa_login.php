@@ -30,6 +30,7 @@ if (isset($utilizadores[$user]) && $utilizadores[$user]['password'] === $pass) {
             break;
         default:
             echo "❌ Tipo de utilizador desconhecido.";
+            echo '<a href="../index.html">Tentar novamente</a>';
             exit;
     }
     exit;

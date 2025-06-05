@@ -1,58 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Cliente</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/cliente.css">
+  <meta charset="UTF-8">
+  <title>Cliente - Listas</title>
+  <link rel="stylesheet" href="styles/cliente.css">
 </head>
-<body>
-    <header>
-        <h1>Área Pessoal do Cliente</h1>
+<body style="background-color: rgb(200, 222, 241);">
+
+  <header>
+    <div class="header-container">
+        <div class="logo-barra">
+            <a href="index.html" class="logo-s">S</a>
+            <a href="index.html" class="logo-texto">SUPER</a>
+            <div class="header-center">
+                <h1>Cliente</h1>
+            </div>
+        </div>
+      <div class="header-right">
+        <form action="pesquisa.html" method="get" class="search-bar">
+          <input type="text" name="q" placeholder="Pesquisar..." />
+          <button type="submit">🔍</button>
+        </form>
         <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="#">Despensa Virtual</a></li>
-                <li><a href="#">Listas de Compras</a></li>
-                <li><a href="#">Histórico</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="index.html">Logout</a></li>
-            </ul>
+          <a href="pesquisa.html">PRODUTOS</a>
         </nav>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <section id="despensa">
-            <h2>Despensa Virtual</h2>
-            <ul>
-                <li>Arroz - 2kg</li>
-                <li>Leite - 6 unidades</li>
-                <li>Ovos - 1 dúzia</li>
-            </ul>
-            <button>Adicionar Produto</button>
-        </section>
+  <main class="principal-container">
+    <aside class="barra-lateral">
+      <button>Despensa</button>
+      <button>Listas</button>
+      <button>Histórico</button>
+      <button>Perfil</button>
+      <a href="index.html" class="botao-logout">Terminar Sessão</a>
+    </aside>
 
-        <section id="listas">
-            <h2>Listas de Compras</h2>
-            <button>Criar Nova Lista</button>
-            <ul>
-                <li>Lista Semanal - [Editar] [Repetir]</li>
-                <li>Lista Vegan - [Editar] [Repetir]</li>
-            </ul>
-        </section>
+    <section class="conteudo">
+      <div class="caixa">
+        <h2>Despensa</h2>
+        <textarea placeholder="Produtos na despensa..."></textarea>
+        <div class="botoes">
+          <button class="btn">Criar</button>
+          <button class="btn">Editar</button>
+          <button class="btn">Repetir</button>
+        </div>
+      </div>
 
-        <section id="recomendacoes">
-            <h2>Recomendações para Si</h2>
-            <ul>
-                <li>Promoção: Leite de Aveia</li>
-                <li>Com base no seu histórico: Massa Integral</li>
-            </ul>
-        </section>
-    </main>
+      <div class="caixa">
+        <h2>Lista de Compras</h2>
+        <textarea placeholder="Itens para comprar..."></textarea>
+      </div>
 
-    <footer>
-        <p>&copy; 2025 Hipermercado Super</p>
-    </footer>
+      <div class="caixa">
+        <h2>Recomendações</h2>
+        <textarea placeholder="Sugestões para ti..."></textarea>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hipermercado Super</p>
+  </footer>
+
 </body>
 </html>

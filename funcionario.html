@@ -59,6 +59,7 @@
       <div class="bloco">
         <h2><u>Tarefas Diárias</u></h2>
         <form action="http://localhost/~ASUS/scripts/atualizar_tarefas.php" method="post">
+          <button type="button" onclick="adicionarTarefa()">Adicionar Nova Tarefa</button>
           <ul style="list-style: none; padding-left: 0;">
             <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="reposicao"> Reposição das
               prateleiras</li>
@@ -88,10 +89,12 @@
       </div>
     </div>
   </main>
+</body>
 
   <footer>
     <p style="padding-top: 1rem;">&copy; 2025 Hipermercado Super</p>
   </footer>
-</body>
+
+<script src="scripts/funcionario.js"></script>
 
 </html>

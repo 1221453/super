@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo de Novo Utilizador</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .modal {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 400px;
+        }
+        .modal h2 {
+            margin-top: 0;
+        }
+        .modal form {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal label {
+            margin: 0.5rem 0 0.2rem;
+        }
+        .modal input {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .modal button {
+            padding: 0.7rem;
+            background-color: #008CFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .modal button:hover {
+            background-color: #0072cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <h2>Criar Novo Utilizador</h2>
+        <form action="../scripts/registo_utilizador.php" method="post">
+            <label for="username">Nome de Utilizador:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Palavra-passe:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm">Confirmar Palavra-passe:</label>
+            <input type="password" id="confirm" name="confirm" required>
+
+            <button type="submit">Registar</button>
+        </form>
+    </div>
+</body>
+</html>

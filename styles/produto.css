@@ -181,7 +181,15 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 2cm;
+  height: 1.5cm;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  padding-left: 30rem;
 }
 
 .header-right {

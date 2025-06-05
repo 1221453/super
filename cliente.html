@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Cliente - Listas</title>
+  <title>Cliente</title>
   <link rel="stylesheet" href="styles/cliente.css">
 </head>
 <body style="background-color: rgb(200, 222, 241);">
@@ -31,7 +31,7 @@
   <main class="principal-container">
     <aside class="barra-lateral">
       <button>Despensa</button>
-      <button>Listas</button>
+      <button id="ver-listas">Listas</button>
       <button>Histórico</button>
       <button>Perfil</button>
       <a href="index.html" class="botao-logout">Terminar Sessão</a>
@@ -44,25 +44,39 @@
         <div class="botoes">
           <button class="btn">Criar</button>
           <button class="btn">Editar</button>
-          <button class="btn">Repetir</button>
         </div>
       </div>
 
-      <div class="caixa">
-        <h2>Lista de Compras</h2>
-        <textarea placeholder="Itens para comprar..."></textarea>
-      </div>
+     <div class="caixa">
+  <h2>Lista de Compras</h2>
+  <input type="text" id="nome-lista" placeholder="Nome da lista..." style="margin-bottom: 0.5rem; padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc;">
+  <textarea id="lista-compras" placeholder="Itens para comprar..."></textarea>
+  <div class="botoes">
+    <button id="guardar-lista" class="btn">Criar</button>
+    <button class="btn">Editar</button>
+  </div>
+</div>
+
 
       <div class="caixa">
         <h2>Recomendações</h2>
         <textarea placeholder="Sugestões para ti..."></textarea>
       </div>
+
+    <div id="bloco-listas" class="caixa" style="display: none;">
+  <h2>Listas Guardadas</h2>
+  <ul id="lista-entradas"></ul>
+</div>
+
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Hipermercado Super</p>
-  </footer>
+   <script src="scripts/adicionar_produto_lista.js"></script>
 
 </body>
+
+<footer>
+    <p>&copy; 2025 Hipermercado Super</p>
+</footer>
+
 </html>

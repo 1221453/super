@@ -181,3 +181,16 @@ footer {
   border-top: 4px solid #0056b3;
   height: 1.5cm;
 }
+
+#bloco-listas ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#bloco-listas li {
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

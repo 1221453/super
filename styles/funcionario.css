@@ -12,7 +12,7 @@ header {
   justify-content: space-between;
   background: #007BFF;
   color: white;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 2rem;
   font-size: 0.9rem;
 }
 
@@ -20,7 +20,7 @@ body {
   font-family:Arial, Helvetica, sans-serif;
   margin: 0;
   background: #f7f9fc;
-  display: flex;
+  display: auto;
   flex-direction: column;
 }
 
@@ -161,7 +161,7 @@ button {
 
 footer {
   border-top: 4px solid #0056b3;
-  height: 2cm;
+  height: 1.5cm;
 }
 
 .resposta-fixa {
@@ -174,4 +174,10 @@ footer {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+input[type="file"] {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  padding: 0.5rem 0;
 }

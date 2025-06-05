@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 function adicionarTarefa() {
   const ul = document.querySelector('form[action*="atualizar_tarefas.php"] ul');
-  const novaTarefa = prompt("Digite o nome da nova tarefa:");
+  const novaTarefa = prompt("Digite a nova tarefa:");
   if (novaTarefa && novaTarefa.trim() !== "") {
     const li = document.createElement("li");
     li.style.marginBottom = "0.8rem";

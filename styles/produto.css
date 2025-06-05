@@ -68,27 +68,28 @@ main {
 }
 
 .product-card {
-    display: flex;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 3rem 4rem;    
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
   .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
 
   .product-image img {
-    width: 100%;
     object-fit: contain;
-    max-height: 400px;
+    width: 500px;
+    height: auto;
     margin-top: 20px;
   }
 
@@ -237,4 +238,29 @@ nav a {
 nav a:hover {
   background-color: #0056b3;
   color: white;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.column h2,
+.column h3 {
+  font-size: 1.5rem;
+}
+
+.column p {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }

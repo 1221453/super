@@ -6,7 +6,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const blocoListas = document.getElementById('bloco-listas');
     const ulEntradas = document.getElementById('lista-entradas');
 
-    // Preencher textarea com última lista
     if (listaCompras) {
         listaCompras.value = localStorage.getItem('lista') || '';
 
@@ -15,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Criar nova lista com nome
     if (botaoCriar && listaCompras && inputNomeLista) {
         botaoCriar.addEventListener('click', () => {
             const texto = listaCompras.value.trim();
@@ -37,11 +35,10 @@ window.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('listasGuardadas', JSON.stringify(listasGuardadas));
 
             alert(`Lista "${nome}" guardada com sucesso!`);
-            inputNomeLista.value = ""; // limpa o campo
+            inputNomeLista.value = "";
         });
     }
 
-    // Mostrar listas guardadas
     if (botaoVerListas && blocoListas && ulEntradas) {
         botaoVerListas.addEventListener('click', () => {
             const listasGuardadas = JSON.parse(localStorage.getItem('listasGuardadas') || '[]');
@@ -61,3 +58,23 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const listaCompras = document.getElementById('lista-compras');
+  if (listaCompras) {
+    listaCompras.value = localStorage.getItem('lista') || '';
+
+    listaCompras.addEventListener('input', () => {
+      localStorage.setItem('lista', listaCompras.value);
+    });
+  }
+});
+
+const despensa = document.getElementById('despensa');
+if (despensa) {
+  despensa.value = localStorage.getItem('despensa') || '';
+
+  despensa.addEventListener('input', () => {
+    localStorage.setItem('despensa', despensa.value);
+  });
+}

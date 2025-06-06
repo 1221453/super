@@ -174,16 +174,11 @@ background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20
 }
 
 .destaques {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    position: relative;
-    left: -1%;
-    padding: 4rem;
-    border-radius: 8px;
-    font-weight: bold;
-    width: 1300px;               /* largura fixa para centrar */
-    margin: auto; 
+  width: 1000px;
+  height: 250px;
+  padding: center;
+  max-width: -50%;
+
 }
 
 main {

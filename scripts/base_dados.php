@@ -1,11 +1,12 @@
 <?php
-$db = new SQLite3('http://localhost/~ASUS/dados.db');
+$db = new SQLite3('../dados.db');
 
 $db->exec("CREATE TABLE IF NOT EXISTS produtos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     preco REAL NOT NULL,
     marca TEXT NOT NULL,
+    imagem TEXT NOT NULL, 
     descricao TEXT
 )");
 

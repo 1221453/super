@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3('http://localhost/~ASUS/dados.db');
+$db = new SQLite3('../dados.db');
 
 $resposta = $_POST['resposta'];
 

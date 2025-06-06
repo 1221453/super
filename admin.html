@@ -43,36 +43,23 @@
           <button type="button" class="criar" onclick="window.location.href='scripts/criar_utilizador.php'">CRIAR
             UTILIZADOR</button>
         </h2>
-        <form action="gestao_utilizadores.php" method="post">
-          <table>
+        <form action="scripts/remover_utilizadores.php" method="post">
+          <table id="listar_utilizadores">
             <thead>
               <tr>
-                <th>NOME</th>
-                <th>EMAIL</th>
-                <th>FUNÇÃO</th>
-                <th>REMOVER</th>
+                <th><input type="checkbox" id="select-all"></th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tipo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Susana Vieira</td>
-                <td>1221453@isep.ipp.pt</td>
-                <td>Estudante</td>
-                <td>
-                  <input type="checkbox" name="remover[]" value="1221453@isep.ipp.pt">
-                </td>
-              </tr>
-              <tr>
-                <td>João Brandão</td>
-                <td>1221446@isep.ipp.pt</td>
-                <td>Estudante</td>
-                <td>
-                  <input type="checkbox" name="remover[]" value="1221446@isep.ipp.pt">
-                </td>
+                <td colspan="6">A carregar utilizadores...</td>
               </tr>
             </tbody>
           </table>
-
           <button type="submit" class="guardar">REMOVER SELECIONADOS</button>
         </form>
       </div>
@@ -117,6 +104,7 @@
   </footer>
   </div>
   <script src="scripts/validacoes.js"></script>
+  <script src="scripts/listar_utilizadores.js"></script>
 
 </body>
 

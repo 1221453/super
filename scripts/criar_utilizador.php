@@ -12,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($nome && $username && $email && $password) {
         $stmt = $db->prepare("
-            INSERT INTO utilizadores (username, password, email, tipo) 
-            VALUES (:username, :password, :email, :tipo)
+            INSERT INTO utilizadores (nome, username, password, email, tipo) 
+            VALUES (:nome, :username, :password, :email, :tipo)
         ");
+        $stmt->bindValue(':nome', $nome, SQLITE3_TEXT);
         $stmt->bindValue(':username', $username, SQLITE3_TEXT);
         $stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), SQLITE3_TEXT);
         $stmt->bindValue(':email', $email, SQLITE3_TEXT);

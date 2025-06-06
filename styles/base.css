@@ -30,7 +30,7 @@ body {
 
 .container {
     position: relative;
-    max-width: 1400px;
+    max-width: auto;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -42,6 +42,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+    padding-left: 10%;
 }
 
 .logo-box {
@@ -61,9 +62,9 @@ body {
     top: 1rem;
     left: 75%;
     display: flex;
-    align-items: left;
     gap: 0.25rem;
     margin-top: 0.5rem;
+    padding-left: 10%;
 }
 
 .search-bar input {
@@ -78,8 +79,8 @@ body {
 
 .nav-buttons .btn {
     position: relative;
-    top: 1.2rem;
-    left: 180%;
+    top: -3.3rem;
+    left: 350%;
     display: inline-block;
     margin: 0.25rem;
     padding: 0.6rem 1rem;
@@ -149,7 +150,7 @@ body {
     background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
     position: absolute;
     top:35%;
-    left: 20%;
+    left: 25%;
     transform: translate(-60%, -60%);
     height: 120px;
     padding: 3rem;
@@ -163,7 +164,7 @@ body {
 background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
     position: absolute;
     top:35%;
-    left: 60%;
+    left: 65%;
     transform: translate(-60%, -60%);
     height: 120px;
     padding: 3rem;
@@ -174,7 +175,7 @@ background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20
 }
 
 .destaques {
-  width: 1000px;
+  width: 800px;
   height: 250px;
   padding: center;
   max-width: -50%;

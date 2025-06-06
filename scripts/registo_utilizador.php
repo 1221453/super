@@ -1,13 +1,17 @@
 
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
-$db = new SQLite3('../db/super.db');
+$db = new SQLite3(__DIR__ . '/../db/super.db');
 
+// Criação da tabela (inclui email obrigatório)
 $db->exec('CREATE TABLE IF NOT EXISTS utilizadores (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE,
-    password TEXT
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    email TEXT NOT NULL
 )');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

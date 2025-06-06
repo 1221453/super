@@ -60,15 +60,26 @@
 <body>
     <div class="modal">
         <h2>Criar Novo Utilizador</h2>
-        <form action="../scripts/registo_utilizador.php" method="post">
+        <form action="scripts/registo_utilizador.php" method="post">
             <label for="username">Nome de Utilizador:</label>
             <input type="text" id="username" name="username" required>
+
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <input type="radio" name="gender" value="Feminino"> Feminino
+            <input type="radio" name="gender" value="Masculino"> Masculino
+            <input type="radio" name="gender" value="Outro"> Outro
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
             <label for="password">Palavra-passe:</label>
             <input type="password" id="password" name="password" required>
 
             <label for="confirm">Confirmar Palavra-passe:</label>
             <input type="password" id="confirm" name="confirm" required>
+
 
             <button type="submit">Registar</button>
         </form>

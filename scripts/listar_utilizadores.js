@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <td>${utilizador.nome}</td>
           <td>${utilizador.email}</td>
           <td>${utilizador.tipo}</td>
-          <td><a href="#" class="btn">Editar</a></td>
+          <td><a href="scripts/editar_utilizador.php?id=${utilizador.id}" class="btn">Editar</a></td>
         `;
                 tbody.appendChild(row);
             });

@@ -4,7 +4,7 @@ session_start();
 // Lista de utilizadores
 $utilizadores = [
     'admin' => ['password' => 'admin', 'tipo' => 'admin'],
-    'funcionario' => ['password' => 'funcionario', 'tipo' => 'funcionario'],
+    'funcionario' => ['password' => 'func01', 'tipo' => 'funcionario'],
     'cliente' => ['password' => 'cliente', 'tipo' => 'cliente']
 ];
 

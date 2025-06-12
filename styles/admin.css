@@ -12,9 +12,12 @@ body {
 }
 
 .linha-topo {
+    position: flex;
+    right: 15%;
     height: 1px;
     background-color: gray;
     width: 100%;
+    margin: 0 0 0;
 }
 
 .top-bar {
@@ -25,22 +28,13 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-}
-
-.logo {
-    position: absolute;
-    top: 1%;
-    left: 4%;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
+    padding: 0 1rem;
 }
 
 .logo-box {
     position: relative;
-    top: auto;
-    right: 27%;
+    margin-top: -4rem;
+    right: 20%;
     background-color: #008CFF;
     color: white;
     padding: 1rem 1rem;
@@ -51,7 +45,7 @@ body {
 
 .nav-buttons .btn {
     position: relative;
-    left: 40%;
+    left: 30%;
     padding: 0.5rem 1rem;
     background-color: #dceeff;
     border: 1px solid #aad1f1;
@@ -60,10 +54,10 @@ body {
     color: black;
     font-weight: bold;
     margin: 0 0.25rem;
+    margin-top: 5rem;
 }
 
 .search-wrapper {
-    margin-left: auto;
     display: flex;
     align-items: center;
 }

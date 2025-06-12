@@ -32,79 +32,77 @@
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
-  </div>
-  </header>
+    </header>
 
-  <main class="admin-layout">
-    <section class="gestao">
-      <div class="gestao-utilizadores">
-        <h2>GESTÃO DE UTILIZADORES
-          <button type="button" class="criar" onclick="window.location.href='scripts/criar_utilizador.php'">CRIAR
-            UTILIZADOR</button>
-        </h2>
-        <form action="scripts/remover_utilizadores.php" method="post">
-          <table id="listar_utilizadores">
-            <thead>
-              <tr>
-                <th><input type="checkbox" id="select-all"></th>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Tipo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="6">A carregar utilizadores...</td>
-              </tr>
-            </tbody>
-          </table>
-          <button type="submit" class="guardar">REMOVER SELECIONADOS</button>
+    <main class="admin-layout">
+      <section class="gestao">
+        <div class="gestao-utilizadores">
+          <h2>GESTÃO DE UTILIZADORES
+            <button type="button" class="criar" onclick="window.location.href='scripts/criar_utilizador.php'">CRIAR
+              UTILIZADOR</button>
+          </h2>
+          <form action="scripts/remover_utilizadores.php" method="post">
+            <table id="listar_utilizadores">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" id="select-all"></th>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6">A carregar utilizadores...</td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" class="guardar">REMOVER SELECIONADOS</button>
+          </form>
+        </div>
+      </section>
+
+      <div class="configuracoes">
+        <h2>CONFIGURAÇÕES</h2>
+        <form action="guardar_configuracoes.php" method="post">
+          <label for="site-name">Nome do Site</label>
+          <input type="text" id="site-name" name="site_name" value="********" required>
+
+          <label for="contact-email">Email de Contacto</label>
+          <input type="email" id="contact-email" name="contact_email" value="********" required>
+
+          <label for="opcoes">Opções</label>
+          <textarea id="opcoes" name="opcoes" rows="4" cols="50"></textarea>
+
+          <button type="submit" class="guardar">GUARDAR ALTERAÇÕES</button>
         </form>
       </div>
-    </section>
 
-    <div class="configuracoes">
-      <h2>CONFIGURAÇÕES</h2>
-      <form action="guardar_configuracoes.php" method="post">
-        <label for="site-name">Nome do Site</label>
-        <input type="text" id="site-name" name="site_name" value="********" required>
+      <section class="relatorios">
+        <h2>RELATÓRIOS DO SISTEMA</h2>
+        <a href="#">RELATÓRIO MENSAL</a><br>
+        <a href="#">RESUMO DE DESEMPENHO</a>
+      </section>
+    </main>
 
-        <label for="contact-email">Email de Contacto</label>
-        <input type="email" id="contact-email" name="contact_email" value="********" required>
-
-        <label for="opcoes">Opções</label>
-        <textarea id="opcoes" name="opcoes" rows="4" cols="50"></textarea>
-
-        <button type="submit" class="guardar">GUARDAR ALTERAÇÕES</button>
-      </form>
-    </div>
-    </section>
-
-    <section class="relatorios">
-      <h2>RELATÓRIOS DO SISTEMA</h2>
-      <a href="#">RELATÓRIO MENSAL</a><br>
-      <a href="#">RESUMO DE DESEMPENHO</a>
-    </section>
-  </main>
-
-  <div class="linha-rodape-total"></div>
-  <footer class="footer-links">
-    <div>
-      <a href="#">Contactos</a>
-      <a href="#">Links úteis</a>
-      <a href="#">Termo de Serviço</a>
-    </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-    </div>
-  </footer>
+    <div class="linha-rodape-total"></div>
+    <footer class="footer-links">
+      <div>
+        <a href="#">Contactos</a>
+        <a href="#">Links úteis</a>
+        <a href="#">Termo de Serviço</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </footer>
   </div>
+
   <script src="scripts/validacoes.js"></script>
   <script src="scripts/listar_utilizadores.js"></script>
-
 </body>
 
 </html>

@@ -100,7 +100,7 @@ header nav a {
 }
 
 main {
- display: flex;
+  display: flex;
   gap: 1rem;
   width: 100%;
   padding: 2rem;
@@ -111,7 +111,7 @@ main {
   width: 160px;
   margin: 0;
   padding: 0;
-  color:#007BFF;
+  color: #007BFF;
 }
 
 .menu-func ul {
@@ -213,4 +213,31 @@ input[type="file"] {
   margin-top: 0.3rem;
   font-size: 1rem;
   padding: 0.5rem 0;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.fechar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
 }

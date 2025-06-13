@@ -73,6 +73,7 @@ if (!$utilizador) {
             <option value="cliente" <?= $utilizador['tipo'] === 'cliente' ? 'selected' : '' ?>>Cliente</option>
             <option value="funcionario" <?= $utilizador['tipo'] === 'funcionario' ? 'selected' : '' ?>>Funcionário</option>
             <option value="admin" <?= $utilizador['tipo'] === 'admin' ? 'selected' : '' ?>>Administrador</option>
+            <option value="cliente" <?= $utilizador['tipo'] === 'cliente' ? 'selected' : '' ?>>Cliente</option>
         </select><br><br>
 
         <label>Nova Palavra-passe (deixar vazio para manter):</label>

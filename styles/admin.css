@@ -17,7 +17,7 @@ body {
     height: 1px;
     background-color: gray;
     width: 100%;
-    margin: 0 0 0;
+    margin-top: 1rem;
 }
 
 .top-bar {
@@ -33,7 +33,7 @@ body {
 
 .logo-box {
     position: relative;
-    margin-top: -4rem;
+    margin-top: -2rem;
     right: 20%;
     background-color: #008CFF;
     color: white;
@@ -45,7 +45,7 @@ body {
 
 .nav-buttons .btn {
     position: relative;
-    left: 30%;
+    left: 20%;
     padding: 0.5rem 1rem;
     background-color: #dceeff;
     border: 1px solid #aad1f1;
@@ -168,18 +168,18 @@ td {
 }
 
 .linha-rodape-total {
-    position: relative;
-    right: 15%;
     height: 1px;
     background-color: gray;
     width: 100%;
-    margin: 0 0 0;
+    margin-top: 1rem;
+    position: absolute;
+    left: 0;
 }
 
 .footer-links {
     display: flex;
     justify-content: space-between;
-    /* ou space-around */
+    margin-top: 1.5rem;
     align-items: left;
     padding: 1rem 5rem;
     font-size: 0.9rem;

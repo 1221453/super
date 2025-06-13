@@ -6,93 +6,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Área do Administrador</title>
   <link rel="stylesheet" href="styles/admin.css">
+  <link rel="stylesheet" href="styles/funcionario.css">
 </head>
 
- <header>
-    <div class="header-container">
-        <div class="logo-barra">
-            <a href="index.html" class="logo-s">S</a>
-            <a href="index.html" class="logo-texto">SUPER</a>
-            <div class="header-center">
-                <h1>Administrador</h1>
-                <nav>
-                  <ul>
-                    <li><u><a href="index.html">Início</a></u></li>
-                    <li><u><a href="scripts/gestao_utilizadores.php">Utilizadores</a></u></li>
-                    <li><u><a href="pesquisa.html">Produtos</a></u></li>
-                    <li><a href="#">Relatórios</a></li>
-                    <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
-                  </ul>
-                </nav>
-            </div>
-        </div>
-      <div class="header-right">
-        <form action="pesquisa.html" method="get" class="search-bar">
-          <input type="text" name="q" placeholder="Pesquisar..." />
-          <button type="submit">🔍</button>
-        </form>
+<header>
+  <div class="header-container">
+    <div class="logo-barra">
+      <a href="index.html" class="logo-s">S</a>
+      <a href="index.html" class="logo-texto">SUPER</a>
+      <div class="header-center">
+        <h1>Administrador</h1>
+        <nav>
+          <ul>
+            <li><u><a href="index.html">Início</a></u></li>
+            <li><u><a href="scripts/gestao_utilizadores.php">Utilizadores</a></u></li>
+            <li><u><a href="pesquisa.html">Produtos</a></u></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </header>
+    <div class="header-right">
+      <form action="pesquisa.html" method="get" class="search-bar">
+        <input type="text" name="q" placeholder="Pesquisar..." />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+  </div>
+</header>
+
 <body>
-    <main class="admin-layout">
-      <section class="gestao">
-        <div class="gestao-utilizadores">
-          <h2>GESTÃO DE UTILIZADORES
-            <button type="button" class="criar" onclick="window.location.href='scripts/criar_utilizador.php'">CRIAR
-              UTILIZADOR</button>
-          </h2>
-          <form action="scripts/remover_utilizadores.php" method="post">
-            <table id="listar_utilizadores">
-              <thead>
-                <tr>
-                  <th><input type="checkbox" id="select-all"></th>
-                  <th>ID</th>
-                  <th>Nome</th>
-                  <th>Email</th>
-                  <th>Tipo</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="6">A carregar utilizadores...</td>
-                </tr>
-              </tbody>
-            </table>
-            <button type="submit" class="guardar">REMOVER SELECIONADOS</button>
-          </form>
-        </div>
-      </section>
+  <main class="admin-layout">
+    <section class="gestao">
+      <div class="gestao-utilizadores">
 
-      <div class="configuracoes">
-        <h2>CONFIGURAÇÕES</h2>
-        <form action="guardar_configuracoes.php" method="post">
-          <label for="site-name">Nome do Site</label>
-          <input type="text" id="site-name" name="site_name" value="********" required>
-
-          <label for="contact-email">Email de Contacto</label>
-          <input type="email" id="contact-email" name="contact_email" value="********" required>
-
-          <label for="opcoes">Opções</label>
-          <textarea id="opcoes" name="opcoes" rows="4" cols="50"></textarea>
-
-          <button type="submit" class="guardar">GUARDAR ALTERAÇÕES</button>
+        <h2>GESTÃO DE UTILIZADORES
+          <button type="button" class="criar" onclick="abrirPopup()">CRIAR UTILIZADOR</button>
+        </h2>
+        <form action="scripts/remover_utilizadores.php" method="post">
+          <table id="listar_utilizadores">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="select-all"></th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="6">A carregar utilizadores...</td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="submit" class="guardar">REMOVER SELECIONADOS</button>
         </form>
       </div>
+    </section>
 
-      <section class="relatorios">
-        <h2>RELATÓRIOS DO SISTEMA</h2>
-        <a href="#">RELATÓRIO MENSAL</a><br>
-        <a href="#">RESUMO DE DESEMPENHO</a>
-      </section>
-    </main>
+    <div class="bloco">
+      <h2><u>Tarefas Diárias</u></h2>
+      <form action="scripts/atualizar_tarefas.php" method="post">
+        <button type="button" onclick="adicionarTarefa()">Adicionar Nova Tarefa</button>
+        <ul style="list-style: none; padding-left: 0;">
+          <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="reposicao"> Reposição das
+            prateleiras</li>
+          <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="validade-iogurtes">
+            Verificar a validade dos iogurtes</li>
+          <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="higienização">
+            Higienização dos carrinhos e cestos</li>
+          <li style="margin-bottom: 0.8rem;"><input type="checkbox" name="tarefas[]" value="preparar-pedidos">
+            Preparação dos pedidos dos clientes</li>
+        </ul>
+        <button type="submit">Atualizar Tarefas</button>
+      </form>
+    </div>
 
-  <script src="scripts/validacoes.js"></script>
-  <script src="scripts/listar_utilizadores.js"></script>
+    <!-- Bloco Mensagens da Gerência -->
+    <div class="bloco">
+      <h2><u>Mensagens Funcionário</u></h2>
+      <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
+      <form action="scripts/enviar_mensagem.php" method="post">
+        <div class="campo">
+          <label for="resposta"><u>Resposta:</u></label>
+          <textarea id="resposta" name="resposta" class="resposta-fixa" placeholder="Escreve aqui a tua resposta..."
+            required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    </div>
+  </main>
 </body>
 
+<section class="relatorios">
+  <h2>RELATÓRIOS DO SISTEMA</h2>
+  <a href="#">RELATÓRIO MENSAL</a><br>
+  <a href="#">RESUMO DE DESEMPENHO</a>
+</section>
+</main>
+
+<script src="scripts/validacoes.js"></script>
+<script src="scripts/listar_utilizadores.js"></script>
+<script>
+  function abrirPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function fecharPopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+</body>
+
+<div id="popup" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="fechar" onclick="fecharPopup()">×</span>
+    <h3>Criar Novo Utilizador</h3>
+    <form action="scripts/registo_admin.php" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" required>
+
+      <label for="username">Username:</label>
+      <input type="text" name="username" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
+
+      <label for="password">Palavra-passe:</label>
+      <input type="password" name="password" required>
+      <label for="confirm">Confirmar Palavra-passe:</label>
+      <input type="password" name="confirm" required>
+
+
+      <label for="tipo">Tipo de utilizador:</label>
+
+      <select name="tipo" required>
+        <option value="cliente">Cliente</option>
+        <option value="funcionario">Funcionário</option>
+        <option value="admin">Administrador</option>
+      </select>
+
+      <button type="submit">Criar</button>
+    </form>
+  </div>
+</div>
+
 <footer>
-    <p>&copy; 2025 Hipermercado Super</p>
+  <p>&copy; 2025 Hipermercado Super</p>
 </footer>
 
 </html>

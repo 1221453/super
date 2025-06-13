@@ -6,33 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Área do Administrador</title>
   <link rel="stylesheet" href="styles/admin.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
-  <div class="linha-topo"></div>
-  <div class="container">
-    <header class="top-bar">
-      <div class="logo">
-        <a href="index.html" class="logo">
-          <div class="logo-box">S</div>
-          <span class="logo-text">Super</span>
-        </a>
-      </div>
-      <div class="nav-buttons">
-        <a href="scripts/gestao_utilizadores.php" class="btn">UTILIZADORES</a>
-        <a href="produto.html" class="btn">PRODUTOS</a>
-        <a href="#" class="btn">RELATÓRIOS</a>
-        <a href="index.html" class="btn">LOGOUT</a>
-      </div>
-      <div class="search-wrapper">
+ <header>
+    <div class="header-container">
+        <div class="logo-barra">
+            <a href="index.html" class="logo-s">S</a>
+            <a href="index.html" class="logo-texto">SUPER</a>
+            <div class="header-center">
+                <h1>Administrador</h1>
+                <nav>
+                  <ul>
+                    <li><u><a href="index.html">Início</a></u></li>
+                    <li><u><a href="scripts/gestao_utilizadores.php">Utilizadores</a></u></li>
+                    <li><u><a href="pesquisa.html">Produtos</a></u></li>
+                    <li><a href="#">Relatórios</a></li>
+                    <li><u><a href="index.html">Terminar Sessão</a></u></li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+      <div class="header-right">
         <form action="pesquisa.html" method="get" class="search-bar">
-          <input type="text" name="q" placeholder="Search">
-          <button type="submit"><i class="fas fa-search"></i></button>
+          <input type="text" name="q" placeholder="Pesquisar..." />
+          <button type="submit">🔍</button>
         </form>
       </div>
-    </header>
-
+    </div>
+  </header>
+<body>
     <main class="admin-layout">
       <section class="gestao">
         <div class="gestao-utilizadores">
@@ -85,23 +87,12 @@
       </section>
     </main>
 
-    <div class="linha-rodape-total"></div>
-    <footer class="footer-links">
-      <div>
-        <a href="#">Contactos</a>
-        <a href="#">Links úteis</a>
-        <a href="#">Termo de Serviço</a>
-      </div>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-      </div>
-    </footer>
-  </div>
-
   <script src="scripts/validacoes.js"></script>
   <script src="scripts/listar_utilizadores.js"></script>
 </body>
+
+<footer>
+    <p>&copy; 2025 Hipermercado Super</p>
+</footer>
 
 </html>

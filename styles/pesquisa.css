@@ -1,36 +1,84 @@
 
+header {
+  background-color: #007BFF;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.5cm;
+}
+
+.logo-barra {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-s {
+    background: white;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.logo-texto {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  padding-left: 30rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(200, 222, 241);
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-bar input {
+  padding: 6px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: white;
+  cursor: pointer;
+}
+
 .search-wrapper {
     margin-left: auto;
     display: flex;
     align-items: center;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.search-bar input {
-    padding: 0.4rem 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.search-bar button {
-    padding: 0.4rem 0.6rem;
-    background-color: #008CFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.search-bar button i {
-    pointer-events: none;
-}
 .filtros {
     background-color: #f9f9f9;
     padding: 1rem;
@@ -95,4 +143,15 @@
 
 .cartao-produto a:hover {
     background-color: #1e8449;
+}
+
+footer {
+  background: #007BFF;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0rem;
+  font-size: 0.9rem;
+  border-top: 4px solid #0056b3;
+  height: 1.5cm;
 }

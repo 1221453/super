@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8">
   <title>Cliente</title>
   <link rel="stylesheet" href="styles/cliente.css">
 </head>
+
 <body style="background-color: rgb(200, 222, 241);">
 
   <header>
@@ -23,6 +25,7 @@
                 </nav>
             </div>
         </div>
+      </div>
       <div class="header-right">
         <form action="pesquisa.html" method="get" class="search-bar">
           <input type="text" name="q" placeholder="Pesquisar..." />
@@ -47,15 +50,16 @@
         <textarea id="despensa" style="width: 98%;" placeholder="Produtos na despensa..."></textarea>
       </div>
 
-     <div class="caixa">
-  <h2>Lista de Compras</h2>
-  <input type="text" id="nome-lista" placeholder="Nome da lista..." style="margin-bottom: 0.5rem; padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc; width: 98.25%">
-  <textarea style="width: 98%;" id="lista-compras" placeholder="Produtos a comprar..."></textarea>
-  <div class="botoes">
-    <button id="guardar-lista" class="btn">Criar</button>
-    <button class="btn">Eliminar</button>
-  </div>
-</div>
+      <div class="caixa">
+        <h2>Lista de Compras</h2>
+        <input type="text" id="nome-lista" placeholder="Nome da lista..."
+          style="margin-bottom: 0.5rem; padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc; width: 98.25%">
+        <textarea style="width: 98%;" id="lista-compras" placeholder="Produtos a comprar..."></textarea>
+        <div class="botoes">
+          <button id="guardar-lista" class="btn">Criar</button>
+          <button class="btn">Eliminar</button>
+        </div>
+      </div>
 
 
       <div class="caixa">
@@ -63,20 +67,20 @@
         <textarea style="width: 98%;" placeholder="Sugestões..."></textarea>
       </div>
 
-    <div id="bloco-listas" class="caixa" style="display: none;">
-  <h2>Listas Guardadas</h2>
-  <ul id="lista-entradas"></ul>
-</div>
+      <div id="bloco-listas" class="caixa" style="display: none;">
+        <h2>Listas Guardadas</h2>
+        <ul id="lista-entradas"></ul>
+      </div>
 
     </section>
   </main>
 
-   <script src="scripts/adicionar_produto_lista.js"></script>
+  <script src="scripts/adicionar_produto_lista.js"></script>
 
 </body>
 
 <footer>
-    <p>&copy; 2025 Hipermercado Super</p>
+  <p>&copy; 2025 Hipermercado Super</p>
 </footer>
 
 </html>

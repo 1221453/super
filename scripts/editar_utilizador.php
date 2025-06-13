@@ -9,7 +9,7 @@ if (!$id) {
 }
 
 // Verifica se o utilizador atual é admin
-if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     echo "Acesso negado. Apenas administradores podem editar utilizadores.";
     exit;
 }

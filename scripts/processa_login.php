@@ -5,7 +5,6 @@ session_start();
 $utilizadores = [
     'admin' => ['password' => 'admin', 'tipo' => 'admin'],
     'funcionario' => ['password' => 'func01', 'tipo' => 'funcionario'],
-    'cliente' => ['password' => 'cliente', 'tipo' => 'cliente']
 ];
 
 // Dados do formulário

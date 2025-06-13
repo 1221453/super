@@ -12,7 +12,7 @@ $allowed_languages = ['en', 'pt'];
 $lang = isset($_GET['lang']) && in_array($_GET['lang'], $allowed_languages) ? $_GET['lang'] : 'pt';
 $safe_lang = preg_replace('/[^a-z]/', '', $lang);
 $message = $translations[$lang] ?? $translations['en'];
-$redirect_url = "../index.html?lang=" . $safe_lang;
+$redirect_url = "../index.html";
 ?>
 <!DOCTYPE html>
 <html lang="<?= $safe_lang ?>">

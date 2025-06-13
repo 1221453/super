@@ -11,20 +11,23 @@
 
   <header>
     <div class="header-container">
-        <div class="logo-barra">
-            <a href="index.html" class="logo-s">S</a>
-            <a href="index.html" class="logo-texto">SUPER</a>
-            <div class="header-center">
-                <h1>Cliente</h1>
-                <nav>
-                  <ul>
-                    <li><u><a href="index.html">Início</a></u></li>
-                    <li><u><a href="pesquisa.html">Produtos</a></u></li>
-                    <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
-                  </ul>
-                </nav>
-            </div>
+      <div class="logo-barra">
+        <a href="index.html" class="logo-s">S</a>
+        <a href="index.html" class="logo-texto">SUPER</a>
+
+        <div class="header-center">
+          <h1>Cliente</h1>
+
+          <nav>
+            <ul>
+              <li><u><a href="index.html">Início</a></u></li>
+              <li><u><a href="pesquisa.html">Produtos</a></u></li>
+              <u><a href="#" onclick="abrirLogout()">Terminar Sessão</a></u>
+            </ul>
+          </nav>
+
         </div>
+      </div>
       <div class="header-right">
         <form action="pesquisa.html" method="get" class="search-bar">
           <input type="text" name="q" placeholder="Pesquisar..." />
@@ -40,7 +43,8 @@
       <button id="ver-listas"><u>Listas</u></button>
       <button>Histórico</button>
       <button>Perfil</button>
-      <a href="scripts/logout.php" class="botao-logout">Terminar Sessão</a>
+      <u><a href="#" onclick="abrirLogout()">Terminar Sessão</a></u>
+
     </aside>
 
     <section class="conteudo">
@@ -74,9 +78,32 @@
     </section>
   </main>
 
-  <script src="scripts/adicionar_produto_lista.js"></script>
+  <script>
+    function abrirLogout() {
+      document.getElementById("popup-logout").style.display = "flex";
+    }
 
+    function fecharLogout() {
+      document.getElementById("popup-logout").style.display = "none";
+    }
+
+    function confirmarLogout() {
+      window.location.href = 'scripts/logout.php';
+    }
+  </script>
+
+  <div id="popup-logout" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <span class="fechar" onclick="fecharLogout()">×</span>
+      <h3>Deseja mesmo terminar a sessão?</h3>
+      <div style="display: flex; justify-content: space-between; gap: 1rem;">
+        <button onclick="confirmarLogout()">Sim</button>
+        <button onclick="fecharLogout()">Cancelar</button>
+      </div>
+    </div>
+  </div>
 </body>
+
 
 <footer>
   <p>&copy; 2025 Hipermercado Super</p>

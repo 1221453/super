@@ -43,9 +43,16 @@ header {
 .header-center {
   display: flex;
   align-items: center;
-  gap: 1rem;
   color: white;
-  padding-left: 30rem;
+  padding-left: auto;
+  text-align: center;
+  flex-direction: column;
+  padding-left: 23rem;
+}
+
+.header-center h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .header-right {
@@ -72,18 +79,19 @@ header {
   cursor: pointer;
 }
 
-nav a {
-  margin-left: 10px;
-  padding: 6px 12px;
-  background-color: #f1dfdc;
-  text-decoration: none;
-  border-radius: 4px;
-  color: black;
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
 }
 
-nav a:hover {
-  background-color: #0056b3;
+header nav a {
   color: white;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .principal-container {
@@ -175,7 +183,7 @@ footer {
   background: #007BFF;
   color: white;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-bottom: 0rem;
   font-size: 0.9rem;
   border-top: 4px solid #0056b3;

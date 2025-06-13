@@ -17,6 +17,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
 // Se for POST, atualizar dados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = trim($_POST['nome'] ?? '');
+    $username = trim($_POST['username'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $tipo = trim($_POST['tipo'] ?? '');
     $novaSenha = trim($_POST['nova_senha'] ?? '');
@@ -26,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindValue(':email', $email, SQLITE3_TEXT);
     $stmt->bindValue(':tipo', $tipo, SQLITE3_TEXT);
     $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
+    $stmt->bindValue(':username', $username, SQLITE3_TEXT);
     $stmt->execute();
 
     // Atualizar password se foi fornecida
@@ -64,6 +66,9 @@ if (!$utilizador) {
     <form method="post">
         <label>Nome:</label>
         <input type="text" name="nome" value="<?= htmlspecialchars($utilizador['nome']) ?>" required><br>
+        
+        <label>Username:</label>
+        <input type="text" name="username" value="<?= htmlspecialchars($utilizador['username']) ?>" required><br>
 
         <label>Email:</label>
         <input type="email" name="email" value="<?= htmlspecialchars($utilizador['email']) ?>" required><br>

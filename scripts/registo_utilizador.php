@@ -25,7 +25,7 @@ if ($existeAdmin == 0) {
     $stmt->execute();
 }
 
-// CriaçÕ do funcionário se não existir
+// Criação do funcionário se não existir
 $existeFuncionario = $db->querySingle("SELECT COUNT(*) FROM utilizadores WHERE username = 'funcionario'");
 if ($existeFuncionario == 0) {
     $stmt = $db->prepare("INSERT INTO utilizadores (nome, username, email, password, tipo)

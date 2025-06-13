@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
     $confirm = trim($_POST['confirm'] ?? '');
-    $tipo = $_POST['tipo'] ?? 'cliente';
+    $tipo = 'cliente';
 
     if ($nome && $username && $email && $password && $confirm) {
         if ($password !== $confirm) {

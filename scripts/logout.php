@@ -3,10 +3,13 @@ session_start();
 session_unset();
 session_destroy();
 
+header("Location: ../index.html");
+
 $translations = [
 	'en' => "Session successfully terminated.",
 	'pt' => "Sessão terminada com sucesso."
 ];
+
 
 $allowed_languages = ['en', 'pt'];
 $lang = isset($_GET['lang']) && in_array($_GET['lang'], $allowed_languages) ? $_GET['lang'] : 'pt';

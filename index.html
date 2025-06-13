@@ -8,65 +8,101 @@
     <link rel="stylesheet" href="styles/base.css">
 </head>
 
- <header>
+<header>
     <div class="header-container">
         <div class="logo-barra">
             <a href="index.html" class="logo-s">S</a>
             <a href="index.html" class="logo-texto">HIPERMERCADO SUPER</a>
             <div class="header-center">
                 <nav>
-                  <ul>
-                    <li><u><a href="pesquisa.html">Produtos</a></u></li>
-                    <li><a href="index.html">Promoções</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="contactos.html">Contactos</a></li>
-                  </ul>
+                    <ul>
+                        <li><u><a href="pesquisa.html">Produtos</a></u></li>
+                        <li><a href="index.html">Promoções</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contactos.html">Contactos</a></li>
+                    </ul>
                 </nav>
             </div>
         </div>
-      <div class="header-right">
-        <form action="pesquisa.html" method="get" class="search-bar">
-          <input type="text" name="q" placeholder="Pesquisar..." />
-          <button type="submit">🔍</button>
-        </form>
-      </div>
+        <div class="header-right">
+            <form action="pesquisa.html" method="get" class="search-bar">
+                <input type="text" name="q" placeholder="Pesquisar..." />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
     </div>
-  </header>
+</header>
 
 <body>
-            <div class="login-box">
-                <h3>Sign In</h3>
-                <form action="scripts/processa_login.php" method="POST">
-                    <label for="username">User Name:</label>
-                    <input type="text" id="username" name="username" required>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                    <button type="submit" class="sign-in">SIGN IN</button>
-                    <a href="#">Forgot Password?</a>
-                </form>
-                <h4>New User</h4>
-                <form action="scripts/registo_utilizador.php" method="post">
-                    <a href="registo.html" class="sign-up">
-                        <button type="button">SIGN UP</button>
-                    </a>
-                </form>
+    <div class="login-box">
+        <h3>Sign In</h3>
+        <form action="scripts/processa_login.php" method="POST">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="sign-in">SIGN IN</button>
+            <a href="#">Forgot Password?</a>
+        </form>
+        <h4>New User</h4>
+        <form action="scripts/registo_utilizador.php" method="post">
+
+            <button type="button" onclick="abrirPopup()">SIGN UP</button>
+
+            </a>
+        </form>
+    </div>
+    </header>
+    <main class="conteudo">
+        <section class="promocoes">
+            <div class="promo-box">
+                <img src="./images/promo1.jpg" alt="promoção 1" class="promo-image">
             </div>
-        </header>
-        <main class="conteudo">
-            <section class="promocoes">
-                <div class="promo-box">
-                    <img src="./images/promo1.jpg" alt="promoção 1" class="promo-image">
-                </div>
-                <div class="promo-box2">
-                    <img src="./images/promo2.jpg" alt="promoção 2" class="promo-image">
-                </div>
-                <img src="./images/destaques.jpg" alt="destaques" class="destaques">
-            </section>
-        </main>
+            <div class="promo-box2">
+                <img src="./images/promo2.jpg" alt="promoção 2" class="promo-image">
+            </div>
+            <img src="./images/destaques.jpg" alt="destaques" class="destaques">
+        </section>
+    </main>
 
     <script src="scripts/validacoes.js"></script>
+    <script>
+        function abrirPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function fecharPopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
 
 </body>
+<div id="popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <span class="fechar" onclick="fecharPopup()">×</span>
+        <h3>Registar Novo Utilizador</h3>
+        <form action="scripts/registo_utilizador.php" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" required>
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="password">Palavra-passe:</label>
+            <input type="password" name="password" required>
+
+            <label for="confirm">Confirmar Palavra-passe:</label>
+            <input type="password" name="confirm" required>
+
+            <input type="hidden" name="tipo" value="cliente"> <!-- força tipo cliente -->
+
+            <button type="submit">Criar Conta</button>
+        </form>
+    </div>
+</div>
 
 <footer>
     <p>&copy; 2025 Hipermercado Super</p>

@@ -1,23 +1,32 @@
 <?php
 session_start();
 
-// Lista de utilizadores
-$utilizadores = [
-    'admin' => ['password' => 'admin', 'tipo' => 'admin'],
-    'funcionario' => ['password' => 'func01', 'tipo' => 'funcionario'],
-];
+// Conexão com a base de dados SQLite
+$db = new SQLite3(__DIR__ . '/../db/super.db');
 
 // Dados do formulário
-$user = $_POST['username'] ?? '';
-$pass = $_POST['password'] ?? '';
+$username = trim($_POST['username'] ?? '');
+$password = trim($_POST['password'] ?? '');
 
-// Verifica se utilizador existe e password está correta
-if (isset($utilizadores[$user]) && $utilizadores[$user]['password'] === $pass) {
-    $_SESSION['user'] = $user;
-    $tipo = $utilizadores[$user]['tipo'];
+// Verificação de campos
+if (!$username || !$password) {
+    echo "⚠️ Preencha todos os campos.";
+    exit;
+}
+
+// Procurar utilizador na base de dados
+$stmt = $db->prepare("SELECT * FROM utilizadores WHERE username = :username");
+$stmt->bindValue(':username', $username, SQLITE3_TEXT);
+$result = $stmt->execute();
+$user = $result->fetchArray(SQLITE3_ASSOC);
+
+// Verificar se existe e se a password corresponde
+if ($user && password_verify($password, $user['password'])) {
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['tipo'] = $user['tipo'];
 
     // Redirecionamento consoante o tipo
-    switch ($tipo) {
+    switch ($user['tipo']) {
         case 'admin':
             header('Location: ../admin.html');
             break;
@@ -25,12 +34,9 @@ if (isset($utilizadores[$user]) && $utilizadores[$user]['password'] === $pass) {
             header('Location: ../funcionario.html');
             break;
         case 'cliente':
+        default:
             header('Location: ../cliente.html');
             break;
-        default:
-            echo "❌ Tipo de utilizador desconhecido.";
-            echo '<a href="../index.html">Tentar novamente</a>';
-            exit;
     }
     exit;
 } else {

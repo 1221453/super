@@ -117,12 +117,13 @@ header nav a {
   font-size: 0.85rem;
 }
 
+
 .barra-lateral .ativo {
   background-color: #007bff;
   color: white;
 }
 
-.botao-logout {
+.barra-lateral a {
   display: inline-block;
   background-color: rgb(227, 92, 92);
   color: white;

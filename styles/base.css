@@ -150,7 +150,6 @@ body {
 }
 
 .promo-box {
-    background: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
     position: absolute;
     top: 35%;
     left: 20%;

@@ -25,7 +25,7 @@ if ($existeAdmin == 0) {
     $stmt->execute();
 }
 
-// CriaçÕ do funcionário se não existir
+// Criação do funcionário se não existir
 $existeFuncionario = $db->querySingle("SELECT COUNT(*) FROM utilizadores WHERE username = 'funcionario'");
 if ($existeFuncionario == 0) {
     $stmt = $db->prepare("INSERT INTO utilizadores (nome, username, email, password, tipo)
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
     $confirm = trim($_POST['confirm'] ?? '');
-    $tipo = $_POST['tipo'] ?? 'cliente';
+    $tipo = 'cliente';
 
     if ($nome && $username && $email && $password && $confirm) {
         if ($password !== $confirm) {

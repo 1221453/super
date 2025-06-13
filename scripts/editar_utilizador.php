@@ -66,7 +66,7 @@ if (!$utilizador) {
     <form method="post">
         <label>Nome:</label>
         <input type="text" name="nome" value="<?= htmlspecialchars($utilizador['nome']) ?>" required><br>
-        
+
         <label>Username:</label>
         <input type="text" name="username" value="<?= htmlspecialchars($utilizador['username']) ?>" required><br>
 
@@ -78,7 +78,6 @@ if (!$utilizador) {
             <option value="cliente" <?= $utilizador['tipo'] === 'cliente' ? 'selected' : '' ?>>Cliente</option>
             <option value="funcionario" <?= $utilizador['tipo'] === 'funcionario' ? 'selected' : '' ?>>Funcionário</option>
             <option value="admin" <?= $utilizador['tipo'] === 'admin' ? 'selected' : '' ?>>Administrador</option>
-            <option value="cliente" <?= $utilizador['tipo'] === 'cliente' ? 'selected' : '' ?>>Cliente</option>
         </select><br><br>
 
         <label>Nova Palavra-passe (deixar vazio para manter):</label>

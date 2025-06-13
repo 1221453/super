@@ -8,63 +8,63 @@
   <link rel="stylesheet" href="styles/funcionario.css" />
 </head>
 
-<header>
-  <div class="header-container">
-    <div class="logo-barra">
-      <a href="index.html" class="logo-s">S</a>
-      <a href="index.html" class="logo-texto">SUPER</a>
-      <div class="header-center">
-        <h1>Funcionário</h1>
-        <nav>
-          <ul>
-            <li><u><a href="index.html">Início</a></u></li>
-            <li><u><a href="pesquisa.html">Produtos</a></u></li>
-            <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
-          </ul>
-        </nav>
+    <header>
+    <div class="header-container">
+        <div class="logo-barra">
+            <a href="index.html" class="logo-s">S</a>
+            <a href="index.html" class="logo-texto">SUPER</a>
+            <div class="header-center">
+                <h1>Funcionário</h1>
+                <nav>
+                  <ul>
+                    <li><u><a href="index.html">Início</a></u></li>
+                    <li><u><a href="pesquisa.html">Produtos</a></u></li>
+                    <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+      <div class="header-right">
+        <form action="pesquisa.html" method="get" class="search-bar">
+          <input type="text" name="q" placeholder="Pesquisar..." />
+          <button type="submit">🔍</button>
+        </form>
       </div>
     </div>
-    <div class="header-right">
-      <form action="pesquisa.html" method="get" class="search-bar">
-        <input type="text" name="q" placeholder="Pesquisar..." />
-        <button type="submit">🔍</button>
-      </form>
-    </div>
-  </div>
-</header>
+  </header>
 
-<body>
+  <body>
   <main class="principal-container">
-
+   
     <div class="conteudo-flex">
       <!-- Bloco Gestão de Produtos -->
       <div class="bloco">
         <h2><u>Gestão de Produtos</u></h2>
-        <form action="scripts/adicionar_produto.php" method="post" enctype="multipart/form-data">
-          <div class="linha">
-            <div class="campo">
-              <label for="nome-produto">Nome do produto:</label>
-              <input type="text" id="nome-produto" name="nome_produto" placeholder="Ex. Arroz integral" required>
-            </div>
-            <div class="campo campo-menor">
-              <label for="preco">Preço:</label>
-              <input type="text" id="preco" name="preco" placeholder="1.49€" required>
-            </div>
-          </div>
-          <div class="campo">
-            <label for="marca">Marca:</label>
-            <input type="text" id="marca" name="marca" placeholder="Ex. Caçarola" required>
-          </div>
-          <div class="campo">
-            <label for="descricao">Descrição:</label>
-            <input type="text" id="descricao" name="descricao" placeholder="Ex. Arroz Integral Extra Longo">
-          </div>
-          <div class="campo">
-            <label for="imagem">Imagem do produto:</label>
-            <input type="file" id="imagem" name="imagem" accept="image/*" required>
-          </div>
-          <button type="submit">Adicionar Produto</button>
-        </form>
+  <form action="scripts/adicionar_produto.php" method="post" enctype="multipart/form-data">
+  <div class="linha">
+    <div class="campo">
+      <label for="nome-produto">Nome do produto:</label>
+      <input type="text" id="nome-produto" name="nome_produto" placeholder="Ex. Arroz integral" required>
+    </div>
+    <div class="campo campo-menor">
+      <label for="preco">Preço:</label>
+      <input type="text" id="preco" name="preco" placeholder="1.49€" required>
+    </div>
+  </div>
+  <div class="campo">
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" name="marca" placeholder="Ex. Caçarola" required>
+  </div>
+  <div class="campo">
+    <label for="descricao">Descrição:</label>
+    <input type="text" id="descricao" name="descricao" placeholder="Ex. Arroz Integral Extra Longo">
+  </div>
+  <div class="campo">
+    <label for="imagem">Imagem do produto:</label>
+    <input type="file" id="imagem" name="imagem" accept="image/*" required>
+  </div>
+  <button type="submit">Adicionar Produto</button>
+</form>
       </div>
 
       <!-- Bloco Tarefas Diárias -->
@@ -103,9 +103,9 @@
   </main>
 </body>
 
-<footer>
-  <p>&copy; 2025 Hipermercado Super</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 Hipermercado Super</p>
+  </footer>
 
 <script src="scripts/funcionario.js"></script>
 

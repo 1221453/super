@@ -18,8 +18,8 @@
                     <ul>
                         <li><u><a href="pesquisa.html">Produtos</a></u></li>
                         <li><a href="index.html">Promoções</a></li>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Contactos</a></li>
+                        <li><u><a href="#" onclick="abrirPopupSobre(); return false;">Sobre Nós</a></u></li>
+                        <li><u><a href="#" onclick="abrirPopupContactos(); return false;">Contactos</a></u></li>
                     </ul>
                 </nav>
             </div>
@@ -35,19 +35,19 @@
 
 <body>
     <div class="login-box">
-        <h3>Sign In</h3>
+        <h3><u>Iniciar Sessão</u></h3>
         <form action="scripts/processa_login.php" method="POST">
-            <label for="username">User Name:</label>
+            <label for="username">Nome de Utilizador:</label>
             <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
+            <label for="password">Palavra-Passe:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit" class="sign-in">SIGN IN</button>
-            <a href="#">Forgot Password?</a>
+            <button type="submit" class="sign-in">Entrar</button>
+            <a href="#">Esqueceu a Palavra-Passe?</a>
         </form>
-        <h4>New User</h4>
+        <h4>Novo Utilizador?</h4>
         <form action="scripts/registo_utilizador.php" method="post">
 
-            <button type="button" onclick="abrirPopup()">SIGN UP</button>
+            <button type="button" class="sign-in" onclick="abrirPopup()">Criar conta</button>
 
             </a>
         </form>
@@ -56,6 +56,7 @@
     <main class="conteudo">
         <section class="promocoes">
             <div class="promo-box">
+                 <h1>Promoções desta semana!</h1>
                 <img src="./images/promo1.jpg" alt="promoção 1" class="promo-image">
             </div>
             <div class="promo-box2">
@@ -97,12 +98,33 @@
             <label for="confirm">Confirmar Palavra-passe:</label>
             <input type="password" name="confirm" required>
 
-            <input type="hidden" name="tipo" value="cliente"> <!-- força tipo cliente -->
+            <input type="hidden" name="tipo" value="cliente">
 
             <button type="submit">Criar Conta</button>
         </form>
     </div>
 </div>
+
+<div id="popup-sobre" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <span class="fechar" onclick="fecharPopupSobre()">×</span>
+        <h3><u>Sobre Nós</u></h3>
+        <p>O Hipermercado Super é uma cadeia de supermercados portuguesa fundada em 2025, dedicada a oferecer produtos de qualidade a preços acessíveis.</p>
+    </div>
+</div>
+
+<div id="popup-contactos" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <span class="fechar" onclick="fecharPopupContactos()">×</span>
+        <h3><u>Contactos</u></h3>
+        <p><b>Email:</b> apoio@hipermercadosuper.pt</p>
+        <p><b>Telefone:</b> +351 912 345 678</p>
+        <p><b>Morada:</b> Rua do ISEP, 123, Porto</p>
+    </div>
+</div>
+
+
+<script src="scripts/popup_index.js"></script>
 
 <footer>
     <p>&copy; 2025 Hipermercado Super</p>

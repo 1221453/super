@@ -18,7 +18,9 @@
             </div>
         </div>
         <div class="header-right">
-            <u><a href="index.html" title="Página Inicial">🏠</a></u>
+            <u>
+                <a href="index.html" title="Página Inicial" style="font-size: 1.5rem;">🏠</a>
+            </u>
             <form action="pesquisa.html" method="get" class="search-bar">
                 <input type="text" name="q" placeholder="Pesquisar..." />
                 <button type="submit">🔍</button>
@@ -30,21 +32,21 @@
 
 <body>
     <main>
+        <h2 class="titulo">Resultados da Pesquisa:</h2>
         <aside class="filtros">
             <h2>Filtros</h2>
-            <form action="pesquisa.html" method="get">
+            <form action="pesquisa.html" method="get" style="padding-bottom: 1rem;">
                 <label><input type="checkbox" name="filtro[]" value="preco_0_10"> Preço (0€ - 10€)</label><br>
                 <label><input type="checkbox" name="filtro[]" value="promocao"> Em promoção</label><br>
                 <label><input type="checkbox" name="filtro[]" value="novidades"> Novidades</label><br>
                 <label><input type="checkbox" name="filtro[]" value="mais_vendidos"> Mais vendidos</label><br>
                 <label><input type="checkbox" name="filtro[]" value="vegan"> Vegan</label><br>
                 <label><input type="checkbox" name="filtro[]" value="sem_lactose"> Sem lactose</label><br>
-                <button type="submit">Aplicar Filtros</button>
+                <button type="submit" class="button-filtros">Aplicar Filtros</button>
             </form>
         </aside>
 
         <section class="resultados">
-            <h2>Resultados da Pesquisa</h2>
             <div class="grelha-produtos">
                 <div class="cartao-produto" data-nome="arroz">
                     <img src="images/integral_arroz.jpg" alt="Arroz">

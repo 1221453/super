@@ -41,7 +41,7 @@ header {
   padding-left: auto;
   text-align: center;
   flex-direction: column;
-  padding-left: 13.5rem;
+  margin-left: -7rem;
 }
 
 .header-center h1 {
@@ -66,7 +66,7 @@ header {
 }
 
 .search-bar button {
-  padding: 6px 10px;
+  padding: 1px 1px;
   border: none;
   border-radius: 0 4px 4px 0;
   background-color: white;
@@ -112,6 +112,7 @@ body {
   border: 1px solid #000;
   padding: 0.7rem 0.5rem;
   flex: 1rem;
+  background-color: white;
 }
 
 .gestao-utilizadores h2 {
@@ -144,8 +145,11 @@ body {
   font-weight: bold;
   border: none;
   padding: 0.6rem;
-  width: 70%;
+  width: 20%;
   border-radius: 4px;
+  margin-top: 1rem;
+  margin-left: 40%;
+  cursor: pointer;
 }
 
 .relatorios {

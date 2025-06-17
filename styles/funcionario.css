@@ -47,7 +47,7 @@ header {
   padding-left: auto;
   text-align: center;
   flex-direction: column;
-  padding-left: 29rem;
+  padding-left: 27.5rem;
 }
 
 .header-center h1 {
@@ -97,6 +97,7 @@ header nav a {
 .principal-container {
   display: flex;
   padding: 20px;
+  padding-bottom: 4.8%;
 }
 
 main {

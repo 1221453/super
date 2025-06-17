@@ -149,8 +149,8 @@ body {
 
 .promo-box {
   position: absolute;
-  top: 46%;
-  left: 25%;
+  top: 36%;
+  left: 26%;
   transform: translate(-60%, -60%);
   height: 280px;
   width: 400px;
@@ -162,8 +162,8 @@ body {
 
 .promo-box2 {
   position: absolute;
-  top: 60%;
-  left: 62%;
+  top: 48.5%;
+  left: 64%;
   transform: translate(-60%, -60%);
   height: 280px;
   padding: 3rem;

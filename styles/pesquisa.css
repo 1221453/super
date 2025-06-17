@@ -80,17 +80,19 @@ body {
 }
 
 .titulo {
-  padding-left: 23%;
+  padding-left: 20%;
+  margin-bottom: 0%;
 }
 
 .filtros {
     background-color: #f9f9f9;
     padding: 1rem;
     border-radius: 8px;
-    margin: 1.7rem;
-    width: 200px;
+    margin: 3rem;
+    width: 180px;
     float: left;
     padding-top: 0%;
+    margin-top: 1.8%;
 }
 
 .button-filtros {
@@ -108,6 +110,7 @@ body {
 .resultados {
     margin-left: 22px;
     padding: 1.5rem;
+    padding-bottom: 9.2%;
 }
 
 .grelha-produtos {

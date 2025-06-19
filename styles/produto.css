@@ -113,6 +113,13 @@ main {
     margin: 0.1rem 0;
   }
 
+  .quantidade {
+    width: 3rem;
+    margin-left: 0.5rem;
+    font-size: 18px;
+    padding-left: 0.5rem;
+  }
+
   .price-box button {
     margin-top: 1rem;
     background: #007BFF;

@@ -42,12 +42,14 @@
 
       <!-- Coluna 2: info e botões -->
       <div class="column price-box">
-        <h2>Arroz Integral</h2>
+        <h2 style="margin-bottom: 0%;">Arroz Integral</h2>
         <div class="stars">★★★★★</div>
         <div class="price">
           <h2>1,49€ / kg</h2>
         </div>
-        <p><b>Quantidade (kg):</b> 4</p>
+        <label for="quantidade"><b style="font-size: 18px;">Quantidade (kg):</b>
+        <input class="quantidade" type="number" id="quantidade" name="quantidade" min="1" step="1" value="4" required>
+        </label>
         <p><b>Stock:</b> 150 unidades</p>
         <form action="/adicionar-produto" method="POST"
           style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">

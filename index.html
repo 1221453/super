@@ -17,7 +17,7 @@
                 <nav>
                     <ul>
                         <li><u><a href="pesquisa.html">Produtos</a></u></li>
-                        <li><a href="index.html">Promoções</a></li>
+                        <li><u><a href="#" onclick="abrirPopupPromocoes()">Promoções</a></u></li>
                         <li><u><a href="#" onclick="abrirPopupSobre(); return false;">Sobre Nós</a></u></li>
                         <li><u><a href="#" onclick="abrirPopupContactos(); return false;">Contactos</a></u></li>
                     </ul>
@@ -42,7 +42,7 @@
             <label for="password">Palavra-Passe:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit" class="sign-in">Entrar</button>
-            <a href="#">Esqueceu a Palavra-Passe?</a>
+            <a href="#" onclick="abrirPopupEsqueceu()">Esqueceu a Palavra-Passe?</a>
         </form>
         <h4>Novo Utilizador?</h4>
         <form action="scripts/registo_utilizador.php" method="post">

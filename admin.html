@@ -21,7 +21,7 @@
             <li><u><a href="index.html">Início</a></u></li>
             <li><u><a href="scripts/gestao_utilizadores.php">Utilizadores</a></u></li>
             <li><u><a href="pesquisa.html">Produtos</a></u></li>
-            <li><a href="#">Relatórios</a></li>
+            <li><u><a href="#" onclick="abrirPopupRelatorios()">Relatórios</a></u></li>
             <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
           </ul>
         </nav>
@@ -29,7 +29,7 @@
     </div>
     <div class="header-right">
           <u>
-            <a href="index.html" title="Página Inicial" style="font-size: 1.5rem;">🏠</a>
+            <a href="index.html" title="Página Inicial" style="font-size: 1.5rem; text-decoration: none;">🏠</a>
           </u>
       <form action="pesquisa.html" method="get" class="search-bar">
         <input type="texto" name="q" placeholder="Pesquisar..." />
@@ -106,13 +106,16 @@
 
 <section class="relatorios">
   <h2>RELATÓRIOS DO SISTEMA</h2>
-  <a href="#">RELATÓRIO MENSAL</a><br>
-  <a href="#">RESUMO DE DESEMPENHO</a>
+  <p><a href="#" onclick="abrirPopupRelatorio()">RELATÓRIO MENSAL</a></p>
+  <p><a href="#" onclick="abrirPopupResumo()">RESUMO DE DESEMPENHO</a></p>
 </section>
 </main>
 
-<script src="scripts/validacoes.js"></script>
-<script src="scripts/listar_utilizadores.js"></script>
+<script 
+  src="scripts/admin.js"
+  src="scripts/validacoes.js">
+  src="scripts/listar_utilizadores.js"></script>
+
 <script>
   function abrirPopup() {
     document.getElementById("popup").style.display = "flex";

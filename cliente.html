@@ -43,11 +43,11 @@
 
   <main class="principal-container">
     <aside class="barra-lateral">
-      <button>Despensa</button>
-      <button id="ver-listas"><u>Listas</u></button>
-      <button>Histórico</button>
-      <button>Perfil</button>
-      <a href="#" onclick="abrirLogout()">Terminar Sessão</a>
+      <button onclick="abrirPopupPerfil()"><u>Perfil</u></button>
+      <button onclick="abrirPopupHistorico()"><u>Histórico</u></button>
+      <button onclick="abrirPopupDespensa()"><u>Despensa</u></button>
+      <button id="ver-listas"><u>Listas Criadas</u></button>
+      <u><a href="#" onclick="abrirLogout()">Terminar Sessão</a></u>
 
     </aside>
 
@@ -95,6 +95,8 @@
       window.location.href = 'scripts/logout.php';
     }
   </script>
+
+  <script src="scripts/cliente.js"></script>
 
   <div id="popup-logout" class="popup-overlay" style="display: none;">
     <div class="popup-content">

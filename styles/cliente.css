@@ -134,6 +134,7 @@ header nav a {
   font-weight: bold;
   font-size: 0.85rem;
   text-decoration: none;
+  width: 82%;
 }
 
 .conteudo {

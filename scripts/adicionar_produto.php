@@ -30,17 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindValue(5, $imagem);
                 $stmt->execute();
 
-                echo "Produto '$nome' adicionado com sucesso!";
+                echo "<script>alert('Produto \"$nome\" adicionado com sucesso!'); window.history.back()</script>";
             } else {
-                echo "Erro ao guardar a imagem.";
+                echo "<script>alert('Erro ao guardar a imagem.'); window.history.back();</script>";
             }
         } else {
-            echo "Erro no upload da imagem: " . $_FILES['imagem']['error'];
+            echo "<script>alert('Erro no upload da imagem: " . $_FILES['imagem']['error'] . "'); window.history.back();</script>";
         }
     } else {
-        echo "Campos obrigatórios em falta.";
+        echo "<script>alert('Campos obrigatórios em falta.'); window.history.back();</script>";
     }
 } else {
-    echo "Acesso inválido ao script.";
+    echo "<script>alert('Acesso inválido ao script.'); window.history.back();</script>";
 }
 ?>

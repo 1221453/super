@@ -11,10 +11,15 @@ $db->exec("CREATE TABLE IF NOT EXISTS produtos (
 )");
 
 $db->exec("CREATE TABLE IF NOT EXISTS tarefas (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    descricao TEXT NOT NULL,
-    concluida BOOLEAN DEFAULT 0
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  descricao TEXT NOT NULL,
+  atribuida BOOLEAN DEFAULT 0,
+  atribuida_por TEXT,
+  atribuida_a TEXT,
+  concluida BOOLEAN DEFAULT 0
 )");
+
+
 
 $db->exec("CREATE TABLE mensagens (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

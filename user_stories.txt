@@ -19,4 +19,4 @@ CLI02 - Filtros Personalizados ......................... 90%
 CLI03 - Lista de Compras ............................... 90%
 CLI04 - Despensa Virtual ............................... 70%
 CLI05 - Sugestão de Receitas ........................... 50%
-CLI06 - Avaliações e Comentários ....................... 50%
+CLI06 - Avaliações e Comentários ....................... 100%

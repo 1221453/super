@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hipermercado Super</title>
     <link rel="stylesheet" href="styles/base.css">
+
 </head>
 
 <header>
@@ -164,14 +165,16 @@
         <p><b>Morada:</b> Rua do ISEP, 123, Porto</p>
     </div>
 </div>
-<button onclick="toggleSobreProjeto()">Sobre o Projeto</button>
-<div id="infoProjeto" style="display:none;">
-    <p>Descrição do projeto: P46 - RETALHO INTELIGENTE</p>
-    <p>Elementos do grupo: JOÃO BRANDÃO e SUSANA VIEIRA</p>
+<button onclick="mostrarDescricaoProjeto()">Sobre o Projeto</button>
+<div id="descricaoProjeto" style="display:none; margin-top:10px;">
+    <h3>Descrição do Projeto</h3>
+    <p>Este projeto foi desenvolvido para a unidade DEAPC, simulando um sistema de retalho para um hipermercado (P46).
+    </p>
+    <p>Equipa: João Brandão e Susana Vieira</p>
 </div>
 
 <script src="scripts/popup_index.js"></script>
-
+<script src="scripts/dom_extra.js"></script>
 <footer>
     <p>&copy; 2025 Hipermercado Super</p>
 </footer>

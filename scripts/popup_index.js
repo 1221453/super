@@ -25,3 +25,8 @@ function abrirPopupPromocoes() {
 function abrirPopupEsqueceu() {
     alert("Funcionalidade de 'Esqueceu a Palavra-Passe' ainda não implementada.");
 }
+
+//Popup Fornecedores
+function abrirPopupFornecedores() {
+    alert("Funcionalidade de 'Fornecedores' ainda não implementada.");
+}

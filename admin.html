@@ -22,6 +22,7 @@
             <li><u><a href="#" onclick="abrirPopupUtilizadores()">Utilizadores</a></u></li>
             <li><u><a href="pesquisa.html">Produtos</a></u></li>
             <li><u><a href="#" onclick="abrirPopupRelatorios()">Relatórios</a></u></li>
+            <li><u><a href="#" onclick="abrirPopupFornecedores()">Fornecedores</a></u></li>
             <li><u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u></li>
 
           </ul>
@@ -224,13 +225,13 @@
         mensagens.forEach(msg => {
           const div = document.createElement('div');
           div.classList.add('mensagem');
-          div.innerHTML =
+          div.innerHTML = `
             <div>
               <p><strong>${msg.remetente}:</strong> ${msg.conteudo}</p>
               <small>${new Date(msg.data).toLocaleString()}</small>
               <button onclick="apagarMensagem(${msg.id}, this)">🗑️</button>
             </div>
-            ;
+          `;
           caixa.appendChild(div);
         });
 
@@ -385,7 +386,7 @@
     <button onclick="confirmarLogout()">OK</button>
   </div>
 </div>
-
+<script src="scripts/popup_index.js"></script>
 <footer>
   <p>&copy; 2025 Hipermercado Super</p>
 </footer>

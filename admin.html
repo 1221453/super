@@ -130,6 +130,20 @@
     document.getElementById("popup").style.display = "none";
   }
 
+  // função para editar utilizador
+  function abrirPopupEditar(id, nome, email, tipo) {
+    document.getElementById("editar-id").value = id;
+    document.getElementById("editar-nome").value = nome;
+    document.getElementById("editar-email").value = email;
+    document.getElementById("editar-tipo").value = tipo;
+
+    document.getElementById("popup-editar-utilizador").style.display = "flex";
+  }
+
+  function fecharPopupEditar() {
+    document.getElementById("popup-editar-utilizador").style.display = "none";
+  }
+
   function abrirPopupUtilizadores() {
     document.getElementById("popup-utilizadores").style.display = "flex";
 
@@ -141,19 +155,19 @@
 
         const tabela = document.createElement("table");
         tabela.innerHTML = `
-    <thead>
-      <tr><th>ID</th><th>Nome</th><th>Tipo</th></tr>
-    </thead>
-    <tbody>
-      ${dados.map(u => `
-              <tr>
-                <td>${u.id}</td>
-                <td>${u.nome}</td>
-                <td>${u.tipo}</td>
-              </tr>
-            `).join('')}
-    </tbody>
-        `;
+      <thead>
+        <tr><th>ID</th><th>Nome</th><th>Tipo</th></tr>
+      </thead>
+      <tbody>
+        ${dados.map(u => `
+          <tr>
+            <td>${u.id}</td>
+            <td>${u.nome}</td>
+            <td>${u.tipo}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    `;
         div.appendChild(tabela);
       })
       .catch(err => {
@@ -161,6 +175,31 @@
         console.error(err);
       });
   }
+  document.getElementById("form-editar-utilizador").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const id = document.getElementById("editar-id").value;
+    const nome = document.getElementById("editar-nome").value.trim();
+    const email = document.getElementById("editar-email").value.trim();
+    const tipo = document.getElementById("editar-tipo").value;
+
+    fetch('scripts/editar_utilizador.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, nome, email, tipo })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.sucesso) {
+          alert("Utilizador atualizado com sucesso!");
+          fecharPopupEditar();
+          location.reload(); // ou recarregar só a tabela, se preferires
+        } else {
+          alert("Erro ao atualizar utilizador: " + (data.erro || "Desconhecido"));
+        }
+      })
+      .catch(() => alert("Erro de comunicação com o servidor."));
+  });
 
   function fecharPopupUtilizadores() {
     document.getElementById("popup-utilizadores").style.display = "none";
@@ -185,11 +224,13 @@
         mensagens.forEach(msg => {
           const div = document.createElement('div');
           div.classList.add('mensagem');
-          div.innerHTML = `
-    <p><strong>${msg.remetente}:</strong> ${msg.conteudo}</p>
-    <small>${new Date(msg.data).toLocaleString()}</small>
-    <button onclick="apagarMensagem(${msg.id}, this)">🗑️</button>
-  `;
+          div.innerHTML =
+            <div>
+              <p><strong>${msg.remetente}:</strong> ${msg.conteudo}</p>
+              <small>${new Date(msg.data).toLocaleString()}</small>
+              <button onclick="apagarMensagem(${msg.id}, this)">🗑️</button>
+            </div>
+            ;
           caixa.appendChild(div);
         });
 
@@ -305,6 +346,33 @@
       </select>
 
       <button type="submit">Criar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Popup para edição de utilizador -->
+<div id="popup-editar-utilizador" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="fechar" onclick="fecharPopupEditar()">×</span>
+    <h3>Editar Utilizador</h3>
+    <form id="form-editar-utilizador">
+
+      <input type="hidden" name="id" id="editar-id">
+
+      <label for="editar-nome">Nome:</label>
+      <input type="text" name="nome" id="editar-nome" required>
+
+      <label for="editar-email">Email:</label>
+      <input type="email" name="email" id="editar-email" required>
+
+      <label for="editar-tipo">Tipo:</label>
+      <select name="tipo" id="editar-tipo" required>
+        <option value="cliente">Cliente</option>
+        <option value="funcionario">Funcionário</option>
+        <option value="admin">Administrador</option>
+      </select>
+
+      <button type="submit">Guardar Alterações</button>
     </form>
   </div>
 </div>

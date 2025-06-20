@@ -48,7 +48,7 @@
       <button onclick="abrirPopupHistorico()"><u>Histórico</u></button>
       <button onclick="abrirPopupDespensa()"><u>Despensa</u></button>
       <button id="ver-listas"><u>Listas Criadas</u></button>
-      <u><a href="#" onclick="abrirLogout()">Terminar Sessão</a></u>
+      <u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u>
 
     </aside>
 
@@ -65,7 +65,7 @@
         <textarea style="width: 98%;" id="lista-compras" placeholder="Produtos a comprar..."></textarea>
         <div class="botoes">
           <button id="guardar-lista" class="btn">Criar</button>
-          <button class="btn">Eliminar</button>
+          <button id="eliminar-lista" class="btn">Eliminar</button>
         </div>
       </div>
 
@@ -96,7 +96,15 @@
       window.location.href = 'scripts/logout.php';
     }
   </script>
+  <script>
+    document.getElementById("eliminar-lista").addEventListener("click", function () {
+      document.getElementById("nome-lista").value = '';
+      document.getElementById("lista-compras").value = '';
+    });
+  </script>
+
   <script src="scripts/cliente.js"></script>
+  <script src="scripts/adicionar_produto_lista.js"></script>
 </body>
 
 <!-- Popup de Logout -->

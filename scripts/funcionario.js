@@ -15,47 +15,36 @@ window.addEventListener("DOMContentLoaded", function () {
       valido = false;
     }
 
-    if (marca.value.trim() === "") {
-      marca.style.borderColor = "red";
-      valido = false;
-    }
-
-    const regexPreco = /^\d+([.,]\d{1,2})?\s*€?$/;
-    if (!regexPreco.test(preco.value.trim())) {
-      preco.style.borderColor = "red";
-      alert("Insira um preço válido (ex: 1.49€ ou 2,50)");
-      valido = false;
-    }
-
-    if (!valido) e.preventDefault();
   });
 
-  // Formulário: Tarefas Diárias
-  const formTarefas = document.querySelector('form[action*="atualizar_tarefas.php"]');
-  if (formTarefas) {
-    formTarefas.addEventListener("submit", function (e) {
-      const checkboxes = formTarefas.querySelectorAll('input[type="checkbox"]');
-      const algumaMarcada = Array.from(checkboxes).some(cb => cb.checked);
-      if (!algumaMarcada) {
-        alert("Por favor, selecione pelo menos uma tarefa.");
-        e.preventDefault();
-      }
-    });
+  if (marca.value.trim() === "") {
+    marca.style.borderColor = "red";
+    valido = false;
   }
 
-  // Formulário: Resposta à Gerência
-  const formResposta = document.querySelector('form[action*="enviar_mensagem.php"]');
-  const resposta = document.getElementById("resposta");
+  const regexPreco = /^\d+([.,]\d{1,2})?\s*€?$/;
+  if (!regexPreco.test(preco.value.trim())) {
+    preco.style.borderColor = "red";
+    alert("Insira um preço válido (ex: 1.49€ ou 2,50)");
+    valido = false;
+  }
 
-  formResposta.addEventListener("submit", function (e) {
-    resposta.style.borderColor = "";
-    if (resposta.value.trim() === "") {
-      resposta.style.borderColor = "red";
-      alert("A resposta à gerência é obrigatória.");
+  if (!valido) e.preventDefault();
+});
+
+// Formulário: Tarefas Diárias
+const formTarefas = document.querySelector('form[action*="atualizar_tarefas.php"]');
+if (formTarefas) {
+  formTarefas.addEventListener("submit", function (e) {
+    const checkboxes = formTarefas.querySelectorAll('input[type="checkbox"]');
+    const algumaMarcada = Array.from(checkboxes).some(cb => cb.checked);
+    if (!algumaMarcada) {
+      alert("Por favor, selecione pelo menos uma tarefa.");
       e.preventDefault();
     }
   });
-});
+}
+
 
 
 function adicionarTarefa() {

@@ -87,20 +87,25 @@
       </form>
     </div>
 
-    <!-- Bloco Mensagens da Gerência -->
+    <!-- Bloco Mensagens do Funcionário -->
     <div class="bloco">
-      <h2><u>Mensagens Funcionário</u></h2>
-      <p><strong>Admin:</strong> Não esquecer a reposição do corredor 3 até às 15h.</p>
-      <form action="scripts/enviar_mensagem.php" method="post">
+      <h2><u>Mensagens do Funcionário</u></h2>
+
+      <div id="caixa-mensagens-funcionario">
+        <p>A carregar mensagens...</p>
+      </div>
+
+      <form id="form-resposta-funcionario">
         <div class="campo">
-          <label for="resposta"><u>Resposta:</u></label>
+          <label for="resposta"><u>Resposta ao funcionário:</u></label>
           <textarea id="resposta" name="resposta" class="resposta-fixa" placeholder="Escreve aqui a tua resposta..."
             required></textarea>
         </div>
         <button type="submit">Enviar</button>
       </form>
     </div>
-    </div>
+
+
   </main>
 </body>
 
@@ -160,6 +165,87 @@
     document.getElementById("popup-utilizadores").style.display = "none";
   }
 </script>
+
+<!-- Script para carregar mensagens do funcionário já incluído abaixo -->
+
+<script>
+  function carregarMensagensFuncionario() {
+    fetch('scripts/listar_mensagens_funcionario.php')
+      .then(res => res.json())
+      .then(mensagens => {
+        const caixa = document.getElementById('caixa-mensagens-funcionario');
+        caixa.innerHTML = '';
+
+        if (!mensagens.length) {
+          caixa.innerHTML = '<p>Sem mensagens do funcionário.</p>';
+          return;
+        }
+
+        mensagens.forEach(msg => {
+          const div = document.createElement('div');
+          div.classList.add('mensagem');
+          div.innerHTML = `
+    <p><strong>${msg.remetente}:</strong> ${msg.conteudo}</p>
+    <small>${new Date(msg.data).toLocaleString()}</small>
+    <button onclick="apagarMensagem(${msg.id}, this)">🗑️</button>
+  `;
+          caixa.appendChild(div);
+        });
+
+      });
+
+  }
+
+  document.getElementById('form-resposta-funcionario').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const textarea = document.getElementById('resposta');
+    const conteudo = textarea.value.trim();
+
+    if (!conteudo) return;
+
+    fetch('scripts/enviar_mensagem.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        conteudo: conteudo,
+        remetente: 'admin'
+      }) // Adiciona o remetente como "Administrador"
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.sucesso) {
+          textarea.value = '';
+          carregarMensagensFuncionario();
+        } else {
+          alert(data.erro || 'Erro ao enviar.');
+        }
+      });
+  });
+
+  window.addEventListener('DOMContentLoaded', carregarMensagensFuncionario);
+</script>
+
+<script>
+  function apagarMensagem(id, btn) {
+    if (!confirm("Deseja mesmo apagar esta mensagem?")) return;
+
+    fetch('scripts/apagar_mensagem.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'id=' + encodeURIComponent(id)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.sucesso) {
+          btn.parentElement.remove(); // Remove o bloco da mensagem
+        } else {
+          alert("Erro: " + (data.erro || "Erro ao apagar mensagem."));
+        }
+      })
+      .catch(() => alert("Erro de comunicação com o servidor."));
+  }
+</script>
+
 </body>
 
 <!-- Popups para Botão utilizadores -->

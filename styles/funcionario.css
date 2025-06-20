@@ -243,3 +243,10 @@ input[type="file"] {
   right: 1rem;
   cursor: pointer;
 }
+
+.mensagem {
+  background-color: #eef5ff;
+  padding: 0.7rem;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+}

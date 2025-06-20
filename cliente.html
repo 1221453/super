@@ -23,11 +23,8 @@
               <li><u><a href="index.html">Início</a></u></li>
               <li><u><a href="pesquisa.html">Produtos</a></u></li>
               <li><u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u></li>
-
             </ul>
           </nav>
-
-
         </div>
       </div>
       <div class="header-right">
@@ -49,7 +46,6 @@
       <button onclick="abrirPopupDespensa()"><u>Despensa</u></button>
       <button id="ver-listas"><u>Listas Criadas</u></button>
       <u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u>
-
     </aside>
 
     <section class="conteudo">
@@ -78,46 +74,73 @@
         <h2>Listas Guardadas</h2>
         <ul id="lista-entradas"></ul>
       </div>
-
     </section>
   </main>
 
   <script>
-    function abrirPopupLogout() {
-      document.getElementById("popup-logout").style.display = "flex";
+    // Carregar as listas guardadas do localStorage
+    function carregarListas() {
+      const listas = JSON.parse(localStorage.getItem("listas")) || [];
+      const ul = document.getElementById("lista-entradas");
+      ul.innerHTML = ""; // Limpa as listas anteriores
 
-      // Aguarda 2 segundos e depois redireciona
-      setTimeout(() => {
-        confirmarLogout();
-      }, 2000);
+      if (listas.length === 0) {
+        ul.innerHTML = "<li>Sem listas guardadas.</li>";
+        return;
+      }
+
+      listas.forEach((lista, index) => {
+        const li = document.createElement("li");
+        li.style.marginBottom = "0.5rem";
+
+        li.innerHTML = `
+        <strong>${lista.nome}</strong>: ${lista.itens}
+        <button onclick="eliminarLista(${index})" style="margin-left: 1rem;">🗑️ Eliminar</button>
+      `;
+        ul.appendChild(li);
+      });
+
+      document.getElementById("bloco-listas").style.display = "block"; // Mostrar o bloco de listas
     }
 
-    function confirmarLogout() {
-      window.location.href = 'scripts/logout.php';
+    // Eliminar uma lista específica
+    function eliminarLista(index) {
+      const listas = JSON.parse(localStorage.getItem("listas")) || [];
+      if (!listas[index]) return; // Verifica se a lista existe
+
+      if (confirm(`Eliminar a lista "${listas[index].nome}"?`)) {
+        listas.splice(index, 1); // Remove a lista do array
+        localStorage.setItem("listas", JSON.stringify(listas)); // Salva de volta ao localStorage
+        carregarListas(); // Recarrega a lista de listas
+      }
     }
-  </script>
-  <script>
+
+    // Limpar a lista de compras atual
     document.getElementById("eliminar-lista").addEventListener("click", function () {
       document.getElementById("nome-lista").value = '';
       document.getElementById("lista-compras").value = '';
     });
+
+    // Executar ao carregar a página
+    window.addEventListener("DOMContentLoaded", carregarListas);
   </script>
 
   <script src="scripts/cliente.js"></script>
   <script src="scripts/adicionar_produto_lista.js"></script>
-</body>
 
-<!-- Popup de Logout -->
-<div id="popup-logout" class="popup-overlay" style="display: none;">
-  <div class="popup-content">
-    <h3>Sessão encerrada</h3>
-    <p>Será redirecionado para a página inicial.</p>
-    <button onclick="confirmarLogout()">OK</button>
+  <!-- Popup de Logout -->
+  <div id="popup-logout" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <h3>Sessão encerrada</h3>
+      <p>Será redirecionado para a página inicial.</p>
+      <button onclick="confirmarLogout()">OK</button>
+    </div>
   </div>
-</div>
 
-<footer>
-  <p>&copy; 2025 Hipermercado Super</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 Hipermercado Super</p>
+  </footer>
+
+</body>
 
 </html>

@@ -11,5 +11,5 @@ if (isset($_POST['tarefas'])) {
     }
 }
 
-echo "Tarefas atualizadas com sucesso.";
+echo "<script>alert('Tarefas atualizadas com sucesso.'); window.history.back();</script>";
 ?>

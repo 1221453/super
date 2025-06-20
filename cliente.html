@@ -23,8 +23,11 @@
               <li><u><a href="index.html">Início</a></u></li>
               <li><u><a href="pesquisa.html">Produtos</a></u></li>
               <li><u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u></li>
+
             </ul>
           </nav>
+
+
         </div>
       </div>
       <div class="header-right">
@@ -46,6 +49,7 @@
       <button onclick="abrirPopupDespensa()"><u>Despensa</u></button>
       <button id="ver-listas"><u>Listas Criadas</u></button>
       <u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u>
+
     </aside>
 
     <section class="conteudo">
@@ -74,9 +78,24 @@
         <h2>Listas Guardadas</h2>
         <ul id="lista-entradas"></ul>
       </div>
+
     </section>
   </main>
 
+  <script>
+    function abrirPopupLogout() {
+      document.getElementById("popup-logout").style.display = "flex";
+
+      // Aguarda 2 segundos e depois redireciona
+      setTimeout(() => {
+        confirmarLogout();
+      }, 2000);
+    }
+
+    function confirmarLogout() {
+      window.location.href = 'scripts/logout.php';
+    }
+  </script>
   <script>
     // Carregar as listas guardadas do localStorage
     function carregarListas() {
@@ -97,6 +116,7 @@
         <strong>${lista.nome}</strong>: ${lista.itens}
         <button onclick="eliminarLista(${index})" style="margin-left: 1rem;">🗑️ Eliminar</button>
       `;
+
         ul.appendChild(li);
       });
 
@@ -115,32 +135,75 @@
       }
     }
 
-    // Limpar a lista de compras atual
+    // Chamada para carregar as listas ao carregar a página
+    window.addEventListener("DOMContentLoaded", carregarListas);
+  </script>
+
+
+  <script>
     document.getElementById("eliminar-lista").addEventListener("click", function () {
       document.getElementById("nome-lista").value = '';
       document.getElementById("lista-compras").value = '';
     });
+  </script>
+
+  <script>
+    function carregarListas() {
+      const listas = JSON.parse(localStorage.getItem("listas")) || [];
+      const ul = document.getElementById("lista-entradas");
+      ul.innerHTML = "";
+
+      if (listas.length === 0) {
+        ul.innerHTML = "<li>Sem listas guardadas.</li>";
+        return;
+      }
+
+      listas.forEach((lista, index) => {
+        const li = document.createElement("li");
+        li.style.marginBottom = "0.5rem";
+
+        li.innerHTML = `
+        <strong>${lista.nome}</strong>: ${lista.itens}
+        <button onclick="eliminarLista(${index})" style="margin-left: 1rem;">🗑️ Eliminar</button>
+      `;
+
+        ul.appendChild(li);
+      });
+
+      document.getElementById("bloco-listas").style.display = "block";
+    }
+
+    function eliminarLista(index) {
+      const listas = JSON.parse(localStorage.getItem("listas")) || [];
+      if (!listas[index]) return;
+
+      if (confirm(`Eliminar a lista "${listas[index].nome}"?`)) {
+        listas.splice(index, 1);
+        localStorage.setItem("listas", JSON.stringify(listas));
+        carregarListas();
+      }
+    }
 
     // Executar ao carregar a página
     window.addEventListener("DOMContentLoaded", carregarListas);
   </script>
 
+
   <script src="scripts/cliente.js"></script>
   <script src="scripts/adicionar_produto_lista.js"></script>
-
-  <!-- Popup de Logout -->
-  <div id="popup-logout" class="popup-overlay" style="display: none;">
-    <div class="popup-content">
-      <h3>Sessão encerrada</h3>
-      <p>Será redirecionado para a página inicial.</p>
-      <button onclick="confirmarLogout()">OK</button>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Hipermercado Super</p>
-  </footer>
-
 </body>
+
+<!-- Popup de Logout -->
+<div id="popup-logout" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <h3>Sessão encerrada</h3>
+    <p>Será redirecionado para a página inicial.</p>
+    <button onclick="confirmarLogout()">OK</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Hipermercado Super</p>
+</footer>
 
 </html>

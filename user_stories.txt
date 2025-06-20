@@ -1,0 +1,21 @@
+Administrador:
+ADM01 - KPI’s .......................................... 100%
+ADM02 - Relatórios ..................................... 100%
+ADM03 - Encomendas fornecedores ........................ 80%
+ADM04 - Promoções ...................................... 80%
+ADM05 - Gestão utilizadores ............................ 100%
+
+Funcionário:
+FUNC01 - Controlo de Stock ............................. 100%
+FUNC02 - Adicionar Produtos ............................ 100%
+FUNC03 - Ver Listas de Clientes ........................ 60%
+FUNC04 - Tarefas ....................................... 100%
+FUNC05 - Comunicações com Gerência ..................... 100%
+
+Cliente:
+CLI01 - Pesquisa ....................................... 100%
+CLI02 - Filtros ........................................ 90%
+CLI03 - Lista de Compras ............................... 90%
+CLI04 - Despensa virtual ............................... 70%
+CLI05 - Sugestões de receitas .......................... 50%
+CLI06 - Avaliações/comentários .......................... 50%

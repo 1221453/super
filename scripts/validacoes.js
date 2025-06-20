@@ -23,18 +23,32 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Validação login index.html
-    const loginForm = document.querySelector('form[action*="processa_login.php"]');
-    if (loginForm) {
-        loginForm.addEventListener('submit', e => {
-            const username = loginForm.querySelector('#username');
-            const password = loginForm.querySelector('#password');
+    function validarLogin() {
+        const user = document.getElementById("username");
+        const pass = document.getElementById("password");
+        let valido = true;
 
-            if (!username.value || !password.value) {
-                alert("Preencha o nome de utilizador e a palavra-passe.");
-                e.preventDefault();
-            }
-        });
+        if (!user.value.trim()) {
+            user.style.border = "2px solid red";
+            valido = false;
+        } else {
+            user.style.border = "";
+        }
+
+        if (!pass.value.trim()) {
+            pass.style.border = "2px solid red";
+            valido = false;
+        } else {
+            pass.style.border = "";
+        }
+
+        if (!valido) {
+            alert("⚠️ Preencha todos os campos obrigatórios.");
+        }
+
+        return valido;
     }
+
 
     // Validação admin.html - configurações
     const configForm = document.querySelector('form[action*="guardar_configuracoes.php"]');

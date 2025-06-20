@@ -110,6 +110,14 @@
         });
     </script>
 
+    <script>
+        function toggleSobreProjeto() {
+            const div = document.getElementById("infoProjeto");
+            div.style.display = div.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+
 </body>
 <div id="popup" class="popup-overlay" style="display: none;">
     <div class="popup-content">
@@ -155,6 +163,11 @@
         <p><b>Telefone:</b> +351 912 345 678</p>
         <p><b>Morada:</b> Rua do ISEP, 123, Porto</p>
     </div>
+</div>
+<button onclick="toggleSobreProjeto()">Sobre o Projeto</button>
+<div id="infoProjeto" style="display:none;">
+    <p>Descrição do projeto: P46 - RETALHO INTELIGENTE</p>
+    <p>Elementos do grupo: JOÃO BRANDÃO e SUSANA VIEIRA</p>
 </div>
 
 <script src="scripts/popup_index.js"></script>

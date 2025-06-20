@@ -36,7 +36,7 @@
 <body>
     <div class="login-box">
         <h3><u>Iniciar Sessão</u></h3>
-        <form action="scripts/processa_login.php" method="POST">
+        <form id="loginForm">
             <label for="username">Nome de Utilizador:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Palavra-Passe:</label>
@@ -56,7 +56,7 @@
     <main class="conteudo">
         <section class="promocoes">
             <div class="promo-box">
-                 <h1>Promoções desta semana!</h1>
+                <h1>Promoções desta semana!</h1>
                 <img src="./images/promo1.jpg" alt="promoção 1" class="promo-image">
             </div>
             <div class="promo-box2">
@@ -75,6 +75,39 @@
         function fecharPopup() {
             document.getElementById("popup").style.display = "none";
         }
+    </script>
+
+    <!--Popup erro password-->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const response = await fetch('scripts/processa_login.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.text();
+
+            if (result.startsWith("OK:")) {
+                const tipo = result.split(':')[1];
+                switch (tipo) {
+                    case 'admin':
+                        window.location.href = 'admin.html';
+                        break;
+                    case 'funcionario':
+                        window.location.href = 'funcionario.html';
+                        break;
+                    case 'cliente':
+                    default:
+                        window.location.href = 'cliente.html';
+                        break;
+                }
+            } else {
+                alert(result); // Podes trocar por popup modal se preferires
+            }
+        });
     </script>
 
 </body>
@@ -109,7 +142,8 @@
     <div class="popup-content">
         <span class="fechar" onclick="fecharPopupSobre()">×</span>
         <h3><u>Sobre Nós</u></h3>
-        <p>O Hipermercado Super é uma cadeia de supermercados portuguesa fundada em 2025, dedicada a oferecer produtos de qualidade a preços acessíveis.</p>
+        <p>O Hipermercado Super é uma cadeia de supermercados portuguesa fundada em 2025, dedicada a oferecer produtos
+            de qualidade a preços acessíveis.</p>
     </div>
 </div>
 
@@ -122,7 +156,6 @@
         <p><b>Morada:</b> Rua do ISEP, 123, Porto</p>
     </div>
 </div>
-
 
 <script src="scripts/popup_index.js"></script>
 

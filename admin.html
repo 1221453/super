@@ -22,7 +22,8 @@
             <li><u><a href="#" onclick="abrirPopupUtilizadores()">Utilizadores</a></u></li>
             <li><u><a href="pesquisa.html">Produtos</a></u></li>
             <li><u><a href="#" onclick="abrirPopupRelatorios()">Relatórios</a></u></li>
-            <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
+            <li><u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u></li>
+
           </ul>
         </nav>
       </div>
@@ -246,6 +247,21 @@
   }
 </script>
 
+<script>
+  function abrirPopupLogout() {
+    document.getElementById("popup-logout").style.display = "flex";
+
+    // Aguarda 2 segundos e depois redireciona
+    setTimeout(() => {
+      confirmarLogout();
+    }, 2000);
+  }
+
+  function confirmarLogout() {
+    window.location.href = 'scripts/logout.php';
+  }
+</script>
+
 </body>
 
 <!-- Popups para Botão utilizadores -->
@@ -290,6 +306,15 @@
 
       <button type="submit">Criar</button>
     </form>
+  </div>
+</div>
+
+<!-- Popups para Logout -->
+<div id="popup-logout" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <h3>Sessão encerrada</h3>
+    <p>Será redirecionado para a página inicial.</p>
+    <button onclick="confirmarLogout()">OK</button>
   </div>
 </div>
 

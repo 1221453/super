@@ -19,7 +19,8 @@
           <ul>
             <li><u><a href="index.html">Início</a></u></li>
             <li><u><a href="pesquisa.html">Produtos</a></u></li>
-            <u><a href="#" onclick="abrirLogout()">Terminar Sessão</a></u>
+            <li><u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u></li>
+
           </ul>
         </nav>
       </div>
@@ -110,29 +111,7 @@
 
     </div>
   </main>
-  <script>
-    function abrirLogout() {
-      document.getElementById("popup-logout").style.display = "flex";
-    }
 
-    function fecharLogout() {
-      document.getElementById("popup-logout").style.display = "none";
-    }
-
-    function confirmarLogout() {
-      window.location.href = 'scripts/logout.php';
-    }
-  </script>
-  <div id="popup-logout" class="popup-overlay" style="display: none;">
-    <div class="popup-content">
-      <span class="fechar" onclick="fecharLogout()">×</span>
-      <h3>Deseja mesmo terminar a sessão?</h3>
-      <div style="display: flex; justify-content: space-between; gap: 1rem;">
-        <button onclick="confirmarLogout()">Sim</button>
-        <button onclick="fecharLogout()">Cancelar</button>
-      </div>
-    </div>
-  </div>
 
   <!--script mensagens da gerência-->
   <script>
@@ -217,11 +196,35 @@
     window.addEventListener('DOMContentLoaded', carregarMensagensFuncionario);
   </script>
 
+  <script>
+    function abrirPopupLogout() {
+      document.getElementById("popup-logout").style.display = "flex";
+
+      // Aguarda 2 segundos e depois redireciona
+      setTimeout(() => {
+        confirmarLogout();
+      }, 2000);
+    }
+
+    function confirmarLogout() {
+      window.location.href = 'scripts/logout.php';
+    }
+  </script>
+
   <footer>
     <p>&copy; 2025 Hipermercado Super</p>
   </footer>
 
   <script src="scripts/funcionario.js"></script>
 </body>
+
+<!-- Popup de Logout -->
+<div id="popup-logout" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <h3>Sessão encerrada</h3>
+    <p>Será redirecionado para a página inicial.</p>
+    <button onclick="confirmarLogout()">OK</button>
+  </div>
+</div>
 
 </html>

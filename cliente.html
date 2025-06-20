@@ -22,7 +22,8 @@
             <ul>
               <li><u><a href="index.html">Início</a></u></li>
               <li><u><a href="pesquisa.html">Produtos</a></u></li>
-              <li><u><a href="#" onclick="abrirLogout()">Terminar Sessão</a></u></li>
+              <li><u><a href="#" onclick="abrirPopupLogout()">Terminar Sessão</a></u></li>
+
             </ul>
           </nav>
 
@@ -30,9 +31,9 @@
         </div>
       </div>
       <div class="header-right">
-          <u>
-            <a href="index.html" title="Página Inicial" style="font-size: 1.5rem; text-decoration: none;">🏠</a>
-          </u>
+        <u>
+          <a href="index.html" title="Página Inicial" style="font-size: 1.5rem; text-decoration: none;">🏠</a>
+        </u>
         <form action="pesquisa.html" method="get" class="search-bar">
           <input type="text" name="q" placeholder="Pesquisar..." />
           <button type="submit">🔍</button>
@@ -68,7 +69,6 @@
         </div>
       </div>
 
-
       <div class="caixa">
         <h2>Recomendações</h2>
         <textarea style="width: 98%;" placeholder="Sugestões..."></textarea>
@@ -83,12 +83,13 @@
   </main>
 
   <script>
-    function abrirLogout() {
+    function abrirPopupLogout() {
       document.getElementById("popup-logout").style.display = "flex";
-    }
 
-    function fecharLogout() {
-      document.getElementById("popup-logout").style.display = "none";
+      // Aguarda 2 segundos e depois redireciona
+      setTimeout(() => {
+        confirmarLogout();
+      }, 2000);
     }
 
     function confirmarLogout() {
@@ -96,21 +97,16 @@
     }
   </script>
 
-  <script src="scripts/cliente.js"> </script>
-   <script src="scripts/adicionar_produto_lista.js"> </script>
-
-  <div id="popup-logout" class="popup-overlay" style="display: none;">
-    <div class="popup-content">
-      <span class="fechar" onclick="fecharLogout()">×</span>
-      <h3>Deseja mesmo terminar a sessão?</h3>
-      <div style="display: flex; justify-content: space-between; gap: 1rem;">
-        <button onclick="confirmarLogout()">Sim</button>
-        <button onclick="fecharLogout()">Cancelar</button>
-      </div>
-    </div>
-  </div>
 </body>
 
+<!-- Popup de Logout -->
+<div id="popup-logout" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <h3>Sessão encerrada</h3>
+    <p>Será redirecionado para a página inicial.</p>
+    <button onclick="confirmarLogout()">OK</button>
+  </div>
+</div>
 
 <footer>
   <p>&copy; 2025 Hipermercado Super</p>

@@ -18,6 +18,8 @@ $db->exec("CREATE TABLE IF NOT EXISTS tarefas (
 
 $db->exec("CREATE TABLE IF NOT EXISTS mensagens (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    remetente TEXT NOT NULL,
+    destinatario TEXT NOT NULL,
     origem TEXT NOT NULL,
     conteudo TEXT NOT NULL,
     data DATETIME DEFAULT CURRENT_TIMESTAMP

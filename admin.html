@@ -19,7 +19,7 @@
         <nav>
           <ul>
             <li><u><a href="index.html">Início</a></u></li>
-            <li><u><a href="scripts/gestao_utilizadores.php">Utilizadores</a></u></li>
+            <li><u><a href="#" onclick="abrirPopupUtilizadores()">Utilizadores</a></u></li>
             <li><u><a href="pesquisa.html">Produtos</a></u></li>
             <li><u><a href="#" onclick="abrirPopupRelatorios()">Relatórios</a></u></li>
             <li><u><a href="scripts/logout.php">Terminar Sessão</a></u></li>
@@ -123,9 +123,57 @@
   function fecharPopup() {
     document.getElementById("popup").style.display = "none";
   }
+
+  function abrirPopupUtilizadores() {
+    document.getElementById("popup-utilizadores").style.display = "flex";
+
+    fetch('scripts/lista_utilizadores.php')  // <- ajusta o nome se for diferente
+      .then(res => res.json())
+      .then(dados => {
+        const div = document.getElementById("conteudo-utilizadores");
+        div.innerHTML = ''; // limpa conteúdo anterior
+
+        const tabela = document.createElement("table");
+        tabela.innerHTML = `
+    <thead>
+      <tr><th>ID</th><th>Nome</th><th>Tipo</th></tr>
+    </thead>
+    <tbody>
+      ${dados.map(u => `
+              <tr>
+                <td>${u.id}</td>
+                <td>${u.nome}</td>
+                <td>${u.tipo}</td>
+              </tr>
+            `).join('')}
+    </tbody>
+        `;
+        div.appendChild(tabela);
+      })
+      .catch(err => {
+        document.getElementById("conteudo-utilizadores").innerHTML = "Erro ao carregar utilizadores.";
+        console.error(err);
+      });
+  }
+
+  function fecharPopupUtilizadores() {
+    document.getElementById("popup-utilizadores").style.display = "none";
+  }
 </script>
 </body>
 
+<!-- Popups para Botão utilizadores -->
+<div id="popup-utilizadores" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="fechar" onclick="fecharPopupUtilizadores()">×</span>
+    <h3>Gestão de Utilizadores</h3>
+    <div id="conteudo-utilizadores">
+      <p>A carregar utilizadores...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Popups para Registo de Utilizadores -->
 <div id="popup" class="popup-overlay" style="display: none;">
   <div class="popup-content">
     <span class="fechar" onclick="fecharPopup()">×</span>

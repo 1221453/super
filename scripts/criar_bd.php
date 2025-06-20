@@ -38,14 +38,6 @@ if (!$result) {
     die("❌ Erro ao criar tabela: " . $db->lastErrorMsg());
 }
 
-// Inserir utilizadores de exemplo
-$utilizadores = [
-    ['admin', 'admin', 'admin@empresa.pt', 'admin'],
-    ['joana', '123456', 'joana@empresa.pt', 'funcionario'],
-    ['carlos', 'cliente', 'carlos@empresa.pt', 'cliente'],
-    ['susana', 'susana123', '1221453@isep.ipp.pt', 'estudante'],
-    ['joao', 'joao123', '1221446@isep.ipp.pt', 'estudante']
-];
 
 foreach ($utilizadores as $u) {
     $stmt = $db->prepare("INSERT OR IGNORE INTO utilizadores (username, password, email, tipo) 
@@ -55,6 +47,21 @@ foreach ($utilizadores as $u) {
     $stmt->bindValue(':email', $u[2], SQLITE3_TEXT);
     $stmt->bindValue(':tipo', $u[3], SQLITE3_TEXT);
     $stmt->execute();
+}
+
+// Criação de tabela de mensagens
+$result = $db->exec("
+    CREATE TABLE IF NOT EXISTS mensagens (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        remetente TEXT NOT NULL,
+        destinatario TEXT NOT NULL,
+        conteudo TEXT NOT NULL,
+        data_envio DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+");
+
+if (!$result) {
+    die('❌ Erro ao criar tabela mensagens: ' . $db->lastErrorMsg());
 }
 
 echo "✅ Tabela criada e utilizadores inseridos com sucesso.";

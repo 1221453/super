@@ -62,5 +62,9 @@ window.addEventListener("DOMContentLoaded", function () {
       ul.appendChild(li);
     }
   };
+
+  function abrirPopupeliminartarefa() {
+    alert("Tarefa eliminada com sucesso!");
+  };
 });
 // Fim do script funcionario.js
